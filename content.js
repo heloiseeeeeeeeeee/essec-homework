@@ -3,6 +3,7 @@
    This is the only file you need to touch to change the text.
    To add a session: copy a whole block { ... }, paste it at the end
    of the list, put a comma between blocks, and change the text.
+   { ready: false } shows a session as "Coming soon".
    ========================================================= */
 
 window.AUTHOR = "Héloïse Guerault";
@@ -32,5 +33,17 @@ window.SESSIONS = [
       { h: "What I will do with it",
         p: "This website is my first real project with these tools. I will add a page after each guest speaker session to keep track of the key ideas, and later I would like to try adding a login with Supabase." }
     ]
-  }
+  },
+
+  /* ---------- Session 2 ---------- */
+  { ready: false },
+
+  /* ---------- Session 3 ---------- */
+  { ready: false },
+
+  /* ---------- Session 4 ---------- */
+  { ready: false },
+
+  /* ---------- Session 5 ---------- */
+  { ready: false }
 ];

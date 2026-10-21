@@ -59,9 +59,9 @@ SESSIONS.forEach((s, i) => {
   const b = document.createElement("button");
   const soon = s.ready === false;
   b.className = "panel" + (soon ? " soon" : ""); b.dataset.cursor = soon ? "Soon" : "Open";
-  b.setAttribute("aria-label", `Open session ${i + 1}: ${s.title}, ${s.speaker}`);
-  b.innerHTML = `<div class="panel-meta"><b>Session ${i + 1}</b><span>${soon ? "Coming soon" : s.date}</span></div><canvas></canvas>
-    <div class="panel-text"><h3>${s.title}</h3><p>${s.speaker}</p></div>`;
+  b.setAttribute("aria-label", soon ? `Session ${i + 1}, coming soon` : `Open session ${i + 1}: ${s.title}, ${s.speaker}`);
+  b.innerHTML = `<div class="panel-meta"><b>Session ${i + 1}</b><span>${soon ? "" : s.date}</span></div><canvas></canvas>
+    <div class="panel-text"><h3>${soon ? "Coming soon" : s.title}</h3>${s.speaker ? `<p>${s.speaker}</p>` : ""}</div>`;
   track.appendChild(b);
   const art = makeArt(b.querySelector("canvas"), i, "#f2f2f0", "#161616");
   b.addEventListener("mouseenter", () => art.speed = 2.2);
