@@ -9,10 +9,15 @@
 html{background:var(--ink)}
 html.locked{overflow:hidden}
 body{background:var(--ink);color:var(--paper);font-family:var(--display);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+button{font:inherit;color:inherit;background:none;border:0}
 :focus-visible{outline:2px solid var(--white);outline-offset:4px}
 .room :focus-visible{outline-color:var(--ink)}
 ::selection{background:var(--white);color:var(--ink)}
+
+/* ---------- cute cursor (native, no lag) ---------- */
+html,body{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='5.5' fill='%23fff' stroke='%23000' stroke-width='1.6'/%3E%3C/svg%3E") 12 12,auto}
+a,button,[data-cursor],.l-head{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='34' viewBox='0 0 34 34'%3E%3Ccircle cx='17' cy='17' r='11' fill='%23fff' stroke='%23000' stroke-width='1.6'/%3E%3Cpath d='M17 10.5c.6 3.6 2.9 5.9 6.5 6.5-3.6.6-5.9 2.9-6.5 6.5-.6-3.6-2.9-5.9-6.5-6.5 3.6-.6 5.9-2.9 6.5-6.5z' fill='%23000'/%3E%3C/svg%3E") 17 17,pointer}
+button:disabled,.panel.soon{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='5.5' fill='%23fff' stroke='%23000' stroke-width='1.6'/%3E%3C/svg%3E") 12 12,not-allowed}
 
 /* ---------- intro ---------- */
 .intro{position:relative;overflow:hidden;isolation:isolate;background:radial-gradient(70% 60% at 62% 55%,#191919 0%,#080808 55%,#000 85%);min-height:100svh;display:grid;grid-template-rows:auto 1fr auto;padding:28px clamp(18px,4vw,56px) 40px}
@@ -136,7 +141,7 @@ footer{display:flex;justify-content:space-between;gap:20px;padding:28px clamp(18
 .q-opts button:hover:not(:disabled){background:var(--ink);color:var(--white)}
 .q-opts button.right{background:var(--ink);color:var(--white);opacity:1}
 .q-opts button.wrong{opacity:.3;text-decoration:line-through}
-.q-opts button:disabled{cursor:default}
+.q-opts button:disabled{}
 .q-why{grid-column:2;font-size:17px;line-height:1.5;color:#55554f;max-width:60ch}
 .score{display:block;margin-top:14px;font-size:15px;color:var(--ink);font-weight:500;font-variant-numeric:tabular-nums}
 
