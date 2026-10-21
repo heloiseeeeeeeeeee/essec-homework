@@ -16,7 +16,7 @@ button{font:inherit;color:inherit;background:none;border:0}
 
 /* ---------- cute cursor (native, no lag) ---------- */
 html,body{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='5.5' fill='%23fff' stroke='%23000' stroke-width='1.6'/%3E%3C/svg%3E") 12 12,auto}
-a,button,[data-cursor],.l-head{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='34' viewBox='0 0 34 34'%3E%3Ccircle cx='17' cy='17' r='11' fill='%23fff' stroke='%23000' stroke-width='1.6'/%3E%3Cpath d='M17 10.5c.6 3.6 2.9 5.9 6.5 6.5-3.6.6-5.9 2.9-6.5 6.5-.6-3.6-2.9-5.9-6.5-6.5 3.6-.6 5.9-2.9 6.5-6.5z' fill='%23000'/%3E%3C/svg%3E") 17 17,pointer}
+a,button,[data-cursor],.l-head{cursor:pointer}
 button:disabled,.panel.soon{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='5.5' fill='%23fff' stroke='%23000' stroke-width='1.6'/%3E%3C/svg%3E") 12 12,not-allowed}
 
 /* ---------- intro ---------- */
