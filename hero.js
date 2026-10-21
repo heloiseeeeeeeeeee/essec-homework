@@ -52,7 +52,7 @@
       const y0 = H * (0.06 + 0.9 * n) - scroll * H * 0.25 * n;
       const amp = 10 + 34 * Math.sin(n * Math.PI);
       const alpha = (0.1 + 0.32 * Math.pow(Math.sin(n * Math.PI), 1.5)) * (1 - scroll * 0.6);
-      ctx.strokeStyle = `rgba(242,242,240,${alpha})`;
+      ctx.strokeStyle = i % 6 === 3 ? `rgba(92,135,232,${Math.min(1, alpha * 1.8)})` : `rgba(242,242,240,${alpha})`;
       ctx.beginPath();
       const xEnd = -20 + (W + 40) * reveal;
       for (let x = -20; x <= xEnd; x += step) {
