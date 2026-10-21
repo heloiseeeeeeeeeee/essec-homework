@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reflection Sessions on Digital Platforms</title>
+<meta name="description" content="Key learnings and reflections from each guest speaker session at ESSEC.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="cursor"><span>Open</span></div>
+
+<section class="intro">
+  <div class="topline"><b>ESSEC Business School, Singapore</b><span>Guest speaker series 2026</span></div>
+  <h1 aria-label="Reflection sessions on digital platforms">
+    <span class="line"><span style="--i:0">Reflection</span></span>
+    <span class="line"><span style="--i:1">sessions on</span></span>
+    <span class="line"><span style="--i:2">digital</span></span>
+    <span class="line"><span style="--i:3">platforms.</span></span>
+  </h1>
+  <div class="intro-foot">
+    <p>Key learnings from each guest speaker this term. Open a session to see its key learnings and my reflection.</p>
+    <div class="hint"><i></i>Scroll to walk through the sessions</div>
+  </div>
+</section>
+
+<section class="track-wrap" id="wrap">
+  <div class="pin">
+    <div class="pin-head">
+      <span>The sessions</span>
+      <div class="counter"><b id="count">01</b><div class="bar"><i id="barfill"></i></div><span id="total">01</span></div>
+    </div>
+    <div class="track" id="track">
+      <div class="lead">
+        <h2>Pick a session.</h2>
+        <p>Each one opens on what the speaker taught, followed by my own reflection.</p>
+      </div>
+      <!-- panels are inserted here -->
+    </div>
+  </div>
+</section>
+
+<footer><span id="author"></span><span>Built for the speaker series assignment</span></footer>
+
+<div class="room" id="room" role="dialog" aria-modal="true" aria-label="Session">
+  <div class="room-bar">
+    <button class="close" id="close"><i aria-hidden="true">✕</i>All sessions</button>
+    <span class="where" id="where"></span>
+    <div class="steps"><button id="prev" aria-label="Previous session">‹</button><button id="nextBtn" aria-label="Next session">›</button></div>
+  </div>
+  <div class="room-body" id="roomBody"></div>
+</div>
+
+<script src="content.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
