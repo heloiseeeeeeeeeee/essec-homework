@@ -13,10 +13,10 @@ window.SESSIONS = [
   {
     speaker: "Rishabh, Yibo and Nirvan",
     role: "",
-    company: "LaunchLab",
+    company: "Singapore American School",
     date: "09/10/2026",
     title: "Vibecoding",
-    definition: "Vibecoding means building a website or an app by describing what you want in plain language and letting an AI tool write the code, then improving it through conversation instead of programming it line by line.",
+    definition: "Vibecoding is a new way of creating websites and apps in which you describe the result you want in everyday language, and an AI tool turns that description into a working product. The creator's role shifts from writing code to directing the outcome: shaping the design, reviewing what the AI builds and refining it step by step, before tools such as GitHub and Vercel store it and publish it online.",
     learnings: [
       { t: "Marketers can now build without developers",
         d: "With tools like Claude Design, you describe the look and content of a page in words and the AI builds it. A landing page, a campaign microsite or a product prototype no longer has to wait for a developer, so the person who knows the customer can build the page directly." },

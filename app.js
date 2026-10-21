@@ -136,8 +136,8 @@ function roomHTML(i) {
   <section class="r-section">
     <div class="r-title"><h3>Key<br>learnings</h3><p>The ideas from ${s.speaker} that I want to remember. Open each one for the detail.</p></div>
     <ul class="learn">
-      ${s.learnings.map((l, k) => `<li class="${k === 0 ? "open" : ""}">
-        <button class="l-head" aria-expanded="${k === 0}" data-cursor="${k === 0 ? "Close" : "Read"}"><span>${l.t}</span><i class="l-icon" aria-hidden="true"></i></button>
+      ${s.learnings.map(l => `<li>
+        <button class="l-head" aria-expanded="false" data-cursor="Read"><span>${l.t}</span><i class="l-icon" aria-hidden="true"></i></button>
         <div class="l-body"><div><p>${l.d}</p></div></div></li>`).join("")}
     </ul>
   </section>
@@ -170,7 +170,7 @@ function fill(i) {
   roomArt = makeArt(body.querySelector(".r-art canvas"), i, "#000000", "#ffffff");
   roomArt.speed = .7;
   $("#where").textContent = `Session ${i + 1}`;
-  $("#prev").disabled = i === 0; $("#nextBtn").disabled = i === SESSIONS.length - 1;
+  $("#prev").disabled = !SESSIONS.some((x, k) => k < i && x.ready !== false); $("#nextBtn").disabled = !SESSIONS.some((x, k) => k > i && x.ready !== false);
   body.querySelectorAll(".l-head").forEach(btn => btn.onclick = () => {
     const li = btn.parentElement, open = li.classList.toggle("open");
     btn.setAttribute("aria-expanded", open); btn.dataset.cursor = open ? "Close" : "Read";
