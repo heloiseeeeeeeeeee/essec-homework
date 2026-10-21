@@ -24,7 +24,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 @media (pointer:coarse){#cursor{display:none}}
 
 /* ---------- intro ---------- */
-.intro{position:relative;overflow:hidden;isolation:isolate;background:radial-gradient(65% 55% at 58% 78%,#1b1b1b 0%,#090909 52%,#000 82%);min-height:100svh;display:grid;grid-template-rows:auto 1fr auto;padding:28px clamp(18px,4vw,56px) 40px}
+.intro{position:relative;overflow:hidden;isolation:isolate;background:radial-gradient(70% 60% at 62% 55%,#191919 0%,#080808 55%,#000 85%);min-height:100svh;display:grid;grid-template-rows:auto 1fr auto;padding:28px clamp(18px,4vw,56px) 40px}
 #hero3d{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
 .intro>:not(#hero3d){position:relative;z-index:1}
 .topline{display:flex;justify-content:space-between;gap:20px;font-size:14px;color:var(--smoke)}
@@ -117,7 +117,7 @@ footer{display:flex;justify-content:space-between;gap:20px;padding:28px clamp(18
 .l-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .7s var(--ease)}
 .learn li.open .l-body{grid-template-rows:1fr}
 .l-body>div{overflow:hidden}
-.l-body p{font-family:var(--serif);font-size:clamp(19px,1.6vw,22px);line-height:1.55;font-weight:300;max-width:62ch;padding:28px 14px 40px clamp(14px,30vw,440px)}
+.l-body p{font-family:var(--serif);font-size:clamp(19px,1.6vw,22px);line-height:1.55;font-weight:300;max-width:68ch;padding:26px 14px 36px}
 
 .reflect{background:var(--ink);color:var(--paper)}
 .reflect .r-title p{color:var(--smoke)}
@@ -166,7 +166,6 @@ footer{display:flex;justify-content:space-between;gap:20px;padding:28px clamp(18
   .r-hero,.r-title{grid-template-columns:1fr}
   .r-art{max-width:420px}
   .who{grid-template-columns:1fr 1fr}
-  .l-body p{padding-left:14px}
   .notes{grid-template-columns:1fr}
   .quiz-list li{grid-template-columns:1fr}
   .q-why{grid-column:auto}
