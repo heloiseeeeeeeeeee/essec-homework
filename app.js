@@ -13,7 +13,7 @@ const arts = [];
 function makeArt(canvas, type, fg, bg) {
   const a = { el: canvas, ctx: canvas.getContext("2d"), type, fg, bg, t: type * 3, speed: .5, visible: true, w: 0, h: 0 };
   const size = () => {
-    const r = canvas.getBoundingClientRect(), d = Math.min(devicePixelRatio || 1, 2);
+    const r = canvas.getBoundingClientRect(), d = Math.min(devicePixelRatio || 1, 1.5);
     a.w = r.width; a.h = r.height;
     canvas.width = Math.round(r.width * d); canvas.height = Math.round(r.height * d);
     a.ctx.setTransform(d, 0, 0, d, 0, 0); draw(a);
@@ -35,12 +35,12 @@ function draw(a) {
         for (let x = 0; x <= w; x += 6) { const y = y0 + Math.sin(x * .02 + t + i * .25) * amp; x ? c.lineTo(x, y) : c.moveTo(x, y); } c.stroke(); } break;
     case 2: { // dot field with a moving lens
       const px = cx + Math.cos(t * .7) * w * .3, py = cy + Math.sin(t * .9) * h * .3, s = 15;
-      for (let x = s / 2; x < w; x += s) for (let y = s / 2; y < h; y += s) { const r = Math.max(.6, 6 - Math.hypot(x - px, y - py) / 26); c.beginPath(); c.arc(x, y, r, 0, TAU); c.fill(); } break; }
+      c.beginPath(); for (let x = s / 2; x < w; x += s) for (let y = s / 2; y < h; y += s) { const r = Math.max(.6, 6 - Math.hypot(x - px, y - py) / 26); c.moveTo(x + r, y); c.arc(x, y, r, 0, TAU); } c.fill(); break; }
     case 3: { // equaliser bars
       const n = 44, bw = w / n;
       for (let i = 0; i < n; i++) { const v = (.5 + .5 * Math.sin(i * .35 + t)) * (.5 + .5 * Math.cos(i * .12 - t * .6)), bh = Math.max(2, v * h * .8); c.fillRect(i * bw + bw * .3, cy - bh / 2, bw * .4, bh); } break; }
     case 4: // spiral
-      for (let i = 0; i < 700; i++) { const ang = i * .16 + t * .35, r = i * m * .45 / 700; c.beginPath(); c.arc(cx + Math.cos(ang) * r, cy + Math.sin(ang) * r, 1 + .8 * Math.sin(i * .05 + t * 2), 0, TAU); c.fill(); } break;
+      c.beginPath(); for (let i = 0; i < 700; i++) { const ang = i * .16 + t * .35, r = i * m * .45 / 700, x = cx + Math.cos(ang) * r, y = cy + Math.sin(ang) * r, rr = 1 + .8 * Math.sin(i * .05 + t * 2); c.moveTo(x + rr, y); c.arc(x, y, rr, 0, TAU); } c.fill(); break;
     case 5: { // moiré
       const o = Math.cos(t * .6) * m * .12;
       for (let i = 1; i < 40; i++) { const r = i * m * .016; c.beginPath(); c.arc(cx - o, cy, r, 0, TAU); c.stroke(); c.beginPath(); c.arc(cx + o, cy, r, 0, TAU); c.stroke(); } break; }
@@ -64,8 +64,9 @@ SESSIONS.forEach((s, i) => {
     <div class="panel-text"><h3>${soon ? "Coming soon" : s.title}</h3>${s.speaker ? `<p>${s.speaker}</p>` : ""}</div>`;
   track.appendChild(b);
   const art = makeArt(b.querySelector("canvas"), i, "#f2f2f0", "#161616");
-  b.addEventListener("mouseenter", () => art.speed = 2.2);
-  b.addEventListener("mouseleave", () => art.speed = .5);
+  art.panel = true;
+  if (soon) art.still = true;
+  else { b.addEventListener("mouseenter", () => art.speed = 2.2); b.addEventListener("mouseleave", () => art.speed = .5); }
   if (!soon) b.addEventListener("click", e => openRoom(i, e.clientX || innerWidth / 2, e.clientY || innerHeight / 2));
 });
 const tail = document.createElement("p");
@@ -91,24 +92,20 @@ function readScroll() {
 addEventListener("scroll", readScroll, { passive: true });
 addEventListener("resize", () => { layout(); readScroll(); });
 
-/* ---------- cursor ---------- */
-const cur = $("#cursor"); let mx = -100, my = -100, cxp = -100, cyp = -100;
-addEventListener("mousemove", e => {
-  mx = e.clientX; my = e.clientY;
-  const el = e.target.closest("[data-cursor]");
-  cur.classList.toggle("big", !!el);
-  if (el) cur.firstElementChild.textContent = el.dataset.cursor;
-});
-
 /* ---------- main loop ---------- */
-let last = performance.now();
+let last = performance.now(), artClock = 0;
 function loop(now) {
   const dt = Math.min(.05, (now - last) / 1000); last = now;
-  pos += (target - pos) * (reduce ? 1 : .09);
-  if (!mobile()) track.style.transform = `translate3d(${-pos}px,0,0)`;
-  cxp += (mx - cxp) * .22; cyp += (my - cyp) * .22;
-  cur.style.transform = `translate3d(${cxp}px,${cyp}px,0)`;
-  for (const a of arts) if (a.visible && a.el.isConnected && !reduce) { a.t += dt * a.speed; draw(a); }
+  if (!mobile() && pos !== target) { pos = target; track.style.transform = `translate3d(${-pos}px,0,0)`; }
+  artClock += dt;
+  if (artClock >= 1 / 30 && !reduce) {
+    const step = artClock; artClock = 0;
+    for (const a of arts) {
+      if (!a.visible || a.still || !a.el.isConnected) continue;
+      if (a.panel && openIdx >= 0) continue;
+      a.t += step * a.speed; draw(a);
+    }
+  }
   requestAnimationFrame(loop);
 }
 
@@ -173,8 +170,7 @@ function fill(i) {
   $("#prev").disabled = !SESSIONS.some((x, k) => k < i && x.ready !== false); $("#nextBtn").disabled = !SESSIONS.some((x, k) => k > i && x.ready !== false);
   body.querySelectorAll(".l-head").forEach(btn => btn.onclick = () => {
     const li = btn.parentElement, open = li.classList.toggle("open");
-    btn.setAttribute("aria-expanded", open); btn.dataset.cursor = open ? "Close" : "Read";
-    cur.firstElementChild.textContent = btn.dataset.cursor;
+    btn.setAttribute("aria-expanded", open);
   });
   let score = 0;
   body.querySelectorAll(".quiz-list li").forEach(li => {

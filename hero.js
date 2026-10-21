@@ -11,7 +11,7 @@
   let W = 0, H = 0, dpr = 1;
   function resize() {
     const r = canvas.getBoundingClientRect();
-    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    dpr = Math.min(window.devicePixelRatio || 1, 1.5);
     W = r.width; H = r.height;
     canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
     if (reduce) draw(performance.now());
@@ -72,7 +72,7 @@
   }
 
   let visible = true, raf = 0;
-  function frame(now) { raf = 0; if (!visible) return; draw(now); raf = requestAnimationFrame(frame); }
+  function frame(now) { raf = 0; if (!visible) return; if (!document.documentElement.classList.contains("locked")) draw(now); raf = requestAnimationFrame(frame); }
   new ResizeObserver(resize).observe(canvas);
   resize();
   if (reduce) draw(performance.now());

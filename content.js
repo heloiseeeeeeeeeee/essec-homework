@@ -31,7 +31,7 @@ window.SESSIONS = [
       { h: "How it connects to my courses",
         p: "In marketing, the speed of testing matters. A landing page for a new product idea can now go live in an afternoon, which changes how fast a brand can try a concept with real people before investing in it." },
       { h: "What I will do with it",
-        p: "This website is my first real project with these tools. I will add a page after each guest speaker session to keep track of the key ideas, and later I would like to try adding a login with Supabase." }
+        p: "This website is my first real project with these tools. I will add a page after each guest speaker session to keep track of the key ideas." }
     ]
   },
 
