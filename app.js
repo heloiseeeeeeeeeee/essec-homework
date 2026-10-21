@@ -8,6 +8,26 @@ const mobile = () => innerWidth <= 860;
 $("#author").textContent = AUTHOR;
 $("#total").textContent = pad(SESSIONS.length);
 
+/* ---------- cork texture, generated once ---------- */
+(() => {
+  try {
+    const s = 360, cv = document.createElement("canvas"); cv.width = cv.height = s;
+    const g = cv.getContext("2d");
+    g.fillStyle = "#c4925a"; g.fillRect(0, 0, s, s);
+    const tones = ["#a8733f", "#d8a76b", "#8c5a2c", "#e6c08a", "#b98149", "#f0d3a4", "#7a4b22"];
+    let seed = 3; const r = () => (seed = seed * 16807 % 2147483647) / 2147483647;
+    for (let i = 0; i < 6500; i++) {
+      const x = r() * s, y = r() * s, w = .5 + r() * 2.4, h = .4 + r() * 1.8, ang = r() * Math.PI;
+      g.fillStyle = tones[(r() * tones.length) | 0]; g.globalAlpha = .5 + r() * .5;
+      for (const dx of [-s, 0, s]) for (const dy of [-s, 0, s]) {
+        const X = x + dx, Y = y + dy; if (X < -4 || X > s + 4 || Y < -4 || Y > s + 4) continue;
+        g.beginPath(); g.ellipse(X, Y, w, h, ang, 0, 6.2832); g.fill();
+      }
+    }
+    document.documentElement.style.setProperty("--cork", `url(${cv.toDataURL()})`);
+  } catch (e) {}
+})();
+
 /* ---------- generative art, one motif per session ---------- */
 const arts = [];
 function makeArt(canvas, type, fg, bg) {
@@ -69,8 +89,12 @@ SESSIONS.forEach((s, i) => {
   else { b.addEventListener("mouseenter", () => art.speed = 2.2); b.addEventListener("mouseleave", () => art.speed = .5); }
   if (!soon) b.addEventListener("click", e => openRoom(i, e.clientX || innerWidth / 2, e.clientY || innerHeight / 2));
 });
-const tail = document.createElement("p");
-tail.className = "tail"; tail.textContent = "More sessions will be added as the term goes on.";
+const tail = document.createElement("div");
+tail.className = "ticket";
+tail.innerHTML = `<div class="t-top">GUEST SPEAKER SERIES<br>ESSEC BUSINESS SCHOOL<br>TERM 2026</div>
+  <div class="t-big">SG</div><div class="t-city">SINGAPORE</div>
+  <p>More sessions will be added as the term goes on.</p>
+  <div class="t-no">NO. ${pad(SESSIONS.filter(s => s.ready !== false).length)} / ${pad(SESSIONS.length)}</div><div class="t-bar" aria-hidden="true"></div>`;
 track.appendChild(tail);
 
 /* ---------- pinned horizontal scroll ---------- */
