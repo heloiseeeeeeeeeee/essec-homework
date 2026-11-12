@@ -55,10 +55,10 @@ window.SESSIONS = [
     /* The reflection, written as an essay.
        chapters: each has a title (h) and blocks, shown in order:
          "text"            a paragraph. [[...]] inside it becomes a clickable side note.
-         { quote: "..." }  a large pull quote
+         { quote: "..." }  a large pull quote (optional)
          { figure: "chain" } or { figure: "scores" }  an interactive figure (data below) */
     essay: {
-      title: "Step four is the job",
+      title: "REFLECTION",
       standfirst: "Agentic AI can organise marketing work into a chain of specialised tasks. This reflection looks at what that changes, what it does not change, and why human judgement should remain at the centre of every decision.",
       chapters: [
         { h: "From tools to workflows", blocks: [
@@ -70,7 +70,6 @@ window.SESSIONS = [
         { h: "Keeping the human at the centre", blocks: [
           "In the workflow presented, the human intervenes at step four, after the strategy and before any production. This placement is significant: the person does not simply correct a finished output, but approves the strategic direction on which everything else depends. Responsibility for the brand stays with a person at the moment where it matters most.",
           "I would go further than this model. Human judgement should not be limited to a single checkpoint; it should be present throughout, from framing the problem and questioning the data used, to the final decision to publish. AI can propose options and point out weaknesses, but accountability towards consumers, the brand and the law cannot be delegated to a system.[[Advertising remains subject to codes of practice, such as the Singapore Code of Advertising Practice. Responsibility for compliance lies with the advertiser and its partners, not with the tool used to produce the content.]]",
-          { quote: "AI can propose and evaluate. Deciding, and answering for that decision, remains human." },
           "The CRAFT framework (Concept, Role, Action, Format, Tone) supports this view. It is less a technical technique than a reminder that the quality of an output depends on the quality of the brief. Writing a clear brief, whether for an agency or an AI system, requires the marketer to know precisely what they want before delegating anything."
         ]},
         { h: "Evaluation and its limits", blocks: [
@@ -78,7 +77,6 @@ window.SESSIONS = [
           { figure: "scores" },
           "These scores should nevertheless be read with caution. They measure conformity to the criteria the system has been given, not the actual response of consumers. A rubric rewards what it can recognise, and the highest rated visual was itself judged more refined than surprising. If creative work is optimised mainly towards such scores, it risks converging on a competent but undistinctive average.",
           "This matters from a brand-building perspective. According to Byron Sharp, brands grow through mental and physical availability, supported by consistent and distinctive brand assets.[[Sharp, B. (2010). How Brands Grow: What Marketers Don't Know. Oxford University Press.]] Producing more content more quickly does not build distinctiveness on its own, and may even dilute it. Deciding which brand codes to protect over time is a strategic choice that, in my view, must remain with the people who understand the brand and its consumers.",
-          { quote: "A rubric rewards what it can recognise. Distinctiveness is precisely what it cannot." }
         ]},
         { h: "What I will do with it", blocks: [
           "In my group projects, I will use CRAFT to structure briefs, ask a separate chat to challenge a brief before relying on it, and always review AI outputs myself before they are shared.",

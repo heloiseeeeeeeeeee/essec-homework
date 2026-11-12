@@ -210,7 +210,6 @@ function essayHTML(s) {
   };
   return `<section class="essay"><div class="e-sheet">
     <header class="e-head">
-      <p class="e-kicker"><span>Reflection</span></p>
       <h3 class="e-title">${e.title}</h3>
       <p class="e-stand">${e.standfirst}</p>
     </header>
