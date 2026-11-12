@@ -173,17 +173,131 @@ function roomHTML(i) {
     </ul>
   </section>` : ""}
 
-  <section class="r-section reflect">
+  ${s.essay ? essayHTML(s) : `<section class="r-section reflect">
     <div class="r-title"><h3>Reflec&shy;tion</h3></div>
     ${s.quote ? `<p class="lit">${s.quote.split(" ").map(w => `<span>${w}</span>`).join(" ")}</p>` : ""}
     <div class="notes">${s.notes.map(x => `<div class="note"><h4>${x.h}</h4><div class="note-body">${x.p.split("\n\n").map(par => `<p>${par}</p>`).join("")}</div></div>`).join("")}</div>
-  </section>
+  </section>`}
 
   <button class="next" data-go="${n ? ni : -1}" data-cursor="${n ? "Next" : "Back"}">
     <small>${n ? "Next: session " + (ni + 1) : "You have reached the end"}</small>
     <strong>${n ? n.title : "All sessions"}</strong>
   </button>`;
 }
+
+/* ---------- reflection written as an interactive essay ---------- */
+const ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"];
+const words = t => t.split(" ").map(w => `<span>${w}</span>`).join(" ");
+function essayHTML(s) {
+  const e = s.essay; let fn = 0, figN = 0;
+  const text = e.chapters.flatMap(c => c.blocks).filter(b => typeof b === "string").join(" ") + " " + e.standfirst + " " + (e.closing || "");
+  const mins = Math.max(1, Math.round(text.split(/\s+/).length / 220));
+  const para = p => `<p class="e-p">${p.replace(/\[\[(.+?)\]\]/g, (_, n) => { fn++; return `<button class="fn" aria-expanded="false" data-cursor="Note">${fn}</button><span class="fn-note" hidden><b>${fn}</b> ${n}</span>`; })}</p>`;
+  const figure = name => {
+    figN++;
+    if (name === "chain" && s.chain) return `<figure class="fig chain" data-fig="chain">
+      <figcaption><b>Figure ${figN}</b> The handoff chain. Click a step, or play the chain.</figcaption>
+      <div class="c-track"><i class="c-line"></i>${s.chain.map((c, k) => `<button class="c-step${c.human ? " human" : ""}" data-k="${k}" data-cursor="Step"><span>${k + 1}</span><em>${c.role}</em></button>`).join("")}</div>
+      <div class="c-panel" aria-live="polite"></div>
+      <button class="c-play" data-cursor="Play">Play the chain</button>
+    </figure>`;
+    if (name === "scores" && s.scores) return `<figure class="fig scores" data-fig="scores">
+      <figcaption><b>Figure ${figN}</b> Creative scores out of 10, rated by the AI through three agency lenses. Switch lens, open a row for the verdict.</figcaption>
+      <div class="s-tabs" role="tablist">${["Average", ...s.scores.lenses].map((l, k) => `<button role="tab" data-l="${k - 1}" aria-selected="${k === 0}" data-cursor="Lens">${l}</button>`).join("")}</div>
+      <ul class="s-rows">${s.scores.items.map(it => `<li class="${it.best ? "best" : ""}"><button class="s-row" aria-expanded="false" data-cursor="Open">
+        <span class="s-name">${it.name}</span><span class="s-bar"><i data-v='${JSON.stringify(it.v)}'></i></span><b class="s-val">0.0</b></button>
+        <div class="s-verdict"><div><p>${it.verdict}</p></div></div></li>`).join("")}</ul>
+    </figure>`;
+    return "";
+  };
+  return `<section class="essay">
+    <header class="e-head">
+      <p class="e-kicker"><span>Reflection</span><span>Essay</span><span>${mins} min read</span></p>
+      <h3 class="e-title">${e.title}</h3>
+      <p class="e-stand">${e.standfirst}</p>
+      <p class="e-by">By ${window.AUTHOR || ""}, after the session of ${s.date}</p>
+    </header>
+    <div class="e-grid">
+      <nav class="e-rail" aria-label="Chapters"><i class="e-meter"><b></b></i>
+        <ol>${e.chapters.map((c, k) => `<li><button data-ch="${k}" data-cursor="Go"><span>${ROMAN[k]}</span>${c.h}</button></li>`).join("")}</ol>
+      </nav>
+      <div class="e-text">
+        ${e.chapters.map((c, k) => `<section class="e-ch" id="ch-${k}">
+          <h4 class="e-h"><span>${ROMAN[k]}</span>${c.h}</h4>
+          ${c.blocks.map(b => typeof b === "string" ? para(b) : b.quote ? `<blockquote class="e-quote lit">${words(b.quote)}</blockquote>` : b.figure ? figure(b.figure) : "").join("")}
+        </section>`).join("")}
+        ${e.closing ? `<p class="e-close lit">${words(e.closing)}</p><p class="e-sign">${window.AUTHOR || ""}</p>` : ""}
+      </div>
+    </div>
+  </section>`;
+}
+
+function wireEssay(s) {
+  const ess = body.querySelector(".essay"); if (!ess) return;
+  /* side notes */
+  ess.querySelectorAll(".fn").forEach(b => b.onclick = () => {
+    const n = b.nextElementSibling, open = n.hidden; n.hidden = !open;
+    b.setAttribute("aria-expanded", open); b.classList.toggle("on", open);
+  });
+  /* chapter rail */
+  ess.querySelectorAll(".e-rail button").forEach(b => b.onclick = () => {
+    const t = ess.querySelector("#ch-" + b.dataset.ch);
+    room.scrollTo({ top: room.scrollTop + t.getBoundingClientRect().top - 110, behavior: reduce ? "auto" : "smooth" });
+  });
+  /* paragraphs and figures rise in */
+  const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add("in"); io.unobserve(x.target); if (x.target.dataset.fig === "scores") setLens(x.target, -1); } }), { root: room, rootMargin: "0px 0px -12% 0px" });
+  ess.querySelectorAll(".e-p,.fig,.e-h").forEach(el => io.observe(el));
+  /* figure: handoff chain */
+  const chain = ess.querySelector(".chain");
+  if (chain) {
+    const steps = chain.querySelectorAll(".c-step"), panel = chain.querySelector(".c-panel"), line = chain.querySelector(".c-line");
+    let timer = 0;
+    const show = k => {
+      const c = s.chain[k];
+      steps.forEach((b, j) => { b.classList.toggle("on", j === k); b.classList.toggle("done", j < k); });
+      line.style.setProperty("--p", k / (steps.length - 1));
+      panel.innerHTML = `<p class="c-role">${k + 1}. ${c.role}</p><p class="c-does">${c.does}</p>${c.note ? `<p class="c-note">${c.note}</p>` : ""}`;
+    };
+    const stop = () => { clearInterval(timer); timer = 0; chain.querySelector(".c-play").textContent = "Play the chain"; };
+    steps.forEach(b => b.onclick = () => { stop(); show(+b.dataset.k); });
+    chain.querySelector(".c-play").onclick = e => {
+      if (timer) return stop();
+      let k = 0; show(0); e.currentTarget.textContent = "Pause";
+      timer = setInterval(() => { k++; if (k >= steps.length) return stop(); show(k); }, 2200);
+    };
+    show(0);
+  }
+  /* figure: creative scores */
+  const sc = ess.querySelector(".scores");
+  if (sc) {
+    sc.querySelectorAll(".s-tabs button").forEach(b => b.onclick = () => setLens(sc, +b.dataset.l));
+    sc.querySelectorAll(".s-row").forEach(b => b.onclick = () => { const li = b.parentElement, o = li.classList.toggle("open"); b.setAttribute("aria-expanded", o); });
+  }
+}
+function setLens(sc, l) {
+  sc.querySelectorAll(".s-tabs button").forEach(b => b.setAttribute("aria-selected", +b.dataset.l === l));
+  sc.querySelectorAll(".s-bar i").forEach(i => {
+    const v = JSON.parse(i.dataset.v), val = l < 0 ? v.reduce((a, b) => a + b, 0) / v.length : v[l];
+    i.style.width = val * 10 + "%";
+    i.closest(".s-row").querySelector(".s-val").textContent = val.toFixed(1);
+  });
+}
+function essayScroll() {
+  const ess = body.querySelector(".essay"); if (!ess) return;
+  const txt = ess.querySelector(".e-text"), r = txt.getBoundingClientRect();
+  const p = Math.min(1, Math.max(0, (innerHeight * .5 - r.top) / r.height));
+  ess.querySelector(".e-meter b").style.transform = `scaleY(${p})`;
+  ess.style.setProperty("--read", p);
+  let cur = 0;
+  ess.querySelectorAll(".e-ch").forEach((c, k) => { if (c.getBoundingClientRect().top < innerHeight * .45) cur = k; });
+  ess.querySelectorAll(".e-rail li").forEach((li, k) => li.classList.toggle("on", k === cur));
+  if (ess.dataset.cur != cur) {
+    ess.dataset.cur = cur;
+    const ol = ess.querySelector(".e-rail ol"), li = ol.children[cur];
+    if (ol.scrollWidth > ol.clientWidth) ol.scrollTo({ left: li.offsetLeft - 18, behavior: reduce ? "auto" : "smooth" });
+  }
+}
+room.addEventListener("scroll", essayScroll, { passive: true });
 
 function fill(i) {
   if (roomArt) arts.splice(arts.indexOf(roomArt), 1);
@@ -213,7 +327,8 @@ function fill(i) {
     const g = +e.currentTarget.dataset.go;
     g < 0 ? closeRoom() : goRoom(g);
   };
-  lightWords();
+  wireEssay(SESSIONS[i]);
+  lightWords(); essayScroll();
 }
 
 function openRoom(i, x, y) {
@@ -244,11 +359,12 @@ function goRoom(i) {
 
 /* words of the reflection light up as you scroll */
 function lightWords() {
-  const p = body.querySelector(".lit"); if (!p) return;
-  const r = p.getBoundingClientRect(), words = p.children;
-  const prog = Math.min(1, Math.max(0, (innerHeight * .85 - r.top) / (r.height + innerHeight * .35)));
-  const on = reduce ? words.length : Math.round(prog * words.length);
-  for (let k = 0; k < words.length; k++) words[k].classList.toggle("on", k < on);
+  body.querySelectorAll(".lit").forEach(p => {
+    const r = p.getBoundingClientRect(), words = p.children;
+    const prog = Math.min(1, Math.max(0, (innerHeight * .85 - r.top) / (r.height + innerHeight * .35)));
+    const on = reduce ? words.length : Math.round(prog * words.length);
+    for (let k = 0; k < words.length; k++) words[k].classList.toggle("on", k < on);
+  });
 }
 room.addEventListener("scroll", lightWords, { passive: true });
 
