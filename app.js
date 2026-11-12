@@ -190,8 +190,6 @@ const ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"];
 const words = t => t.split(" ").map(w => `<span>${w}</span>`).join(" ");
 function essayHTML(s) {
   const e = s.essay; let fn = 0, figN = 0;
-  const text = e.chapters.flatMap(c => c.blocks).filter(b => typeof b === "string").join(" ") + " " + e.standfirst + " " + (e.closing || "");
-  const mins = Math.max(1, Math.round(text.split(/\s+/).length / 220));
   const para = p => `<p class="e-p">${p.replace(/\[\[(.+?)\]\]/g, (_, n) => { fn++; return `<button class="fn" aria-expanded="false" data-cursor="Note">${fn}</button><span class="fn-note" hidden><b>${fn}</b> ${n}</span>`; })}</p>`;
   const figure = name => {
     figN++;
@@ -210,12 +208,11 @@ function essayHTML(s) {
     </figure>`;
     return "";
   };
-  return `<section class="essay">
+  return `<section class="essay"><div class="e-sheet">
     <header class="e-head">
-      <p class="e-kicker"><span>Reflection</span><span>Essay</span><span>${mins} min read</span></p>
+      <p class="e-kicker"><span>Reflection</span></p>
       <h3 class="e-title">${e.title}</h3>
       <p class="e-stand">${e.standfirst}</p>
-      <p class="e-by">By ${window.AUTHOR || ""}, after the session of ${s.date}</p>
     </header>
     <div class="e-grid">
       <nav class="e-rail" aria-label="Chapters"><i class="e-meter"><b></b></i>
@@ -226,10 +223,10 @@ function essayHTML(s) {
           <h4 class="e-h"><span>${ROMAN[k]}</span>${c.h}</h4>
           ${c.blocks.map(b => typeof b === "string" ? para(b) : b.quote ? `<blockquote class="e-quote lit">${words(b.quote)}</blockquote>` : b.figure ? figure(b.figure) : "").join("")}
         </section>`).join("")}
-        ${e.closing ? `<p class="e-close lit">${words(e.closing)}</p><p class="e-sign">${window.AUTHOR || ""}</p>` : ""}
+        ${e.closing ? `<p class="e-close lit">${words(e.closing)}</p>` : ""}
       </div>
     </div>
-  </section>`;
+  </div></section>`;
 }
 
 function wireEssay(s) {
