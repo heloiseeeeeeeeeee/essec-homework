@@ -176,7 +176,7 @@ function roomHTML(i) {
   <section class="r-section reflect">
     <div class="r-title"><h3>Reflec&shy;tion</h3></div>
     ${s.quote ? `<p class="lit">${s.quote.split(" ").map(w => `<span>${w}</span>`).join(" ")}</p>` : ""}
-    <div class="notes">${s.notes.map(x => `<div><h4>${x.h}</h4><p>${x.p}</p></div>`).join("")}</div>
+    <div class="notes">${s.notes.map(x => `<div class="note"><h4>${x.h}</h4><div class="note-body">${x.p.split("\n\n").map(par => `<p>${par}</p>`).join("")}</div></div>`).join("")}</div>
   </section>
 
   <button class="next" data-go="${n ? ni : -1}" data-cursor="${n ? "Next" : "Back"}">
