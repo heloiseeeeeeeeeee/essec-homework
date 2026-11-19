@@ -357,3 +357,19 @@ footer{background:var(--denim) repeating-linear-gradient(45deg,rgba(255,255,255,
 }
 @media (prefers-reduced-motion:reduce){.e-p,.fig,.e-h{opacity:1;transform:none}}
 .e-ch:last-child{padding-bottom:0}
+
+/* figure: 2x2 matrix */
+.m-wrap{display:grid;grid-template-columns:28px 1fr;grid-template-rows:auto auto;gap:10px}
+.m-y{writing-mode:vertical-rl;transform:rotate(180deg);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--smoke);text-align:center}
+.m-y::before{content:"\2191  "}
+.m-x{grid-column:2;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--smoke);text-align:center}
+.m-x::after{content:"  \2192"}
+.m-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;aspect-ratio:2/1.15}
+.m-cell{display:grid;align-content:end;gap:4px;text-align:left;padding:16px;border:1px solid var(--rule);background:#fff;transition:background .35s,color .35s,border-color .35s}
+.m-cell b{font-size:clamp(16px,1.6vw,21px);letter-spacing:-.01em}
+.m-cell em{font-style:normal;font-size:13px;color:var(--smoke);transition:color .35s}
+.m-cell:hover{border-color:var(--ink)}
+.m-cell.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.m-cell.best.on{background:var(--blue);border-color:var(--blue)}
+.m-cell.on em{color:rgba(255,255,255,.75)}
+@media (max-width:860px){.m-grid{aspect-ratio:auto}.m-cell{min-height:96px;padding:12px}}

@@ -191,21 +191,28 @@ const words = t => t.split(" ").map(w => `<span>${w}</span>`).join(" ");
 function essayHTML(s) {
   const e = s.essay; let fn = 0, figN = 0;
   const para = p => `<p class="e-p">${p.replace(/\[\[(.+?)\]\]/g, (_, n) => { fn++; return `<button class="fn" aria-expanded="false" data-cursor="Note">${fn}</button><span class="fn-note" hidden><b>${fn}</b> ${n}</span>`; })}</p>`;
-  const figure = name => {
-    figN++;
+  const figure = b => {
+    const name = b.figure; figN++;
     if (name === "chain" && s.chain) return `<figure class="fig chain" data-fig="chain">
-      <figcaption><b>Figure ${figN}</b> The handoff chain. Click a step, or play the chain.</figcaption>
+      <figcaption><b>Figure ${figN}</b> ${b.caption || "The handoff chain. Click a step, or play the chain."}</figcaption>
       <div class="c-track"><i class="c-line"></i>${s.chain.map((c, k) => `<button class="c-step${c.human ? " human" : ""}" data-k="${k}" data-cursor="Step"><span>${k + 1}</span><em>${c.role}</em></button>`).join("")}</div>
       <div class="c-panel" aria-live="polite"></div>
-      <button class="c-play" data-cursor="Play">Play the chain</button>
+      <button class="c-play" data-cursor="Play" data-label="${b.play || "Play the chain"}">${b.play || "Play the chain"}</button>
     </figure>`;
     if (name === "scores" && s.scores) return `<figure class="fig scores" data-fig="scores">
-      <figcaption><b>Figure ${figN}</b> Creative scores out of 10, rated by the AI through three agency lenses. Switch lens, open a row for the verdict.</figcaption>
+      <figcaption><b>Figure ${figN}</b> ${b.caption || "Creative scores out of 10, rated by the AI through three agency lenses. Switch lens, open a row for the verdict."}</figcaption>
       <div class="s-tabs" role="tablist">${["Average", ...s.scores.lenses].map((l, k) => `<button role="tab" data-l="${k - 1}" aria-selected="${k === 0}" data-cursor="Lens">${l}</button>`).join("")}</div>
       <ul class="s-rows">${s.scores.items.map(it => `<li class="${it.best ? "best" : ""}"><button class="s-row" aria-expanded="false" data-cursor="Open">
         <span class="s-name">${it.name}</span><span class="s-bar"><i data-v='${JSON.stringify(it.v)}'></i></span><b class="s-val">0.0</b></button>
         <div class="s-verdict"><div><p>${it.verdict}</p></div></div></li>`).join("")}</ul>
     </figure>`;
+    if (name === "matrix" && s.matrix) { const m = s.matrix; return `<figure class="fig matrix" data-fig="matrix">
+      <figcaption><b>Figure ${figN}</b> ${b.caption || "Click a quadrant."}</figcaption>
+      <div class="m-wrap"><span class="m-y">${m.y}</span>
+        <div class="m-grid">${m.cells.map((c, k) => `<button class="m-cell${c.best ? " best" : ""}" data-k="${k}" data-cursor="Open"><b>${c.name}</b><em>${c.tag || ""}</em></button>`).join("")}</div>
+        <span class="m-x">${m.x}</span></div>
+      <div class="c-panel m-panel" aria-live="polite"></div>
+    </figure>`; }
     return "";
   };
   return `<section class="essay"><div class="e-sheet">
@@ -220,7 +227,7 @@ function essayHTML(s) {
       <div class="e-text">
         ${e.chapters.map((c, k) => `<section class="e-ch" id="ch-${k}">
           <h4 class="e-h"><span>${ROMAN[k]}</span>${c.h}</h4>
-          ${c.blocks.map(b => typeof b === "string" ? para(b) : b.quote ? `<blockquote class="e-quote lit">${words(b.quote)}</blockquote>` : b.figure ? figure(b.figure) : "").join("")}
+          ${c.blocks.map(b => typeof b === "string" ? para(b) : b.quote ? `<blockquote class="e-quote lit">${words(b.quote)}</blockquote>` : b.figure ? figure(b) : "").join("")}
         </section>`).join("")}
         ${e.closing ? `<p class="e-close lit">${words(e.closing)}</p>` : ""}
       </div>
@@ -254,7 +261,7 @@ function wireEssay(s) {
       line.style.setProperty("--p", k / (steps.length - 1));
       panel.innerHTML = `<p class="c-role">${k + 1}. ${c.role}</p><p class="c-does">${c.does}</p>${c.note ? `<p class="c-note">${c.note}</p>` : ""}`;
     };
-    const stop = () => { clearInterval(timer); timer = 0; chain.querySelector(".c-play").textContent = "Play the chain"; };
+    const stop = () => { clearInterval(timer); timer = 0; const pb = chain.querySelector(".c-play"); pb.textContent = pb.dataset.label; };
     steps.forEach(b => b.onclick = () => { stop(); show(+b.dataset.k); });
     chain.querySelector(".c-play").onclick = e => {
       if (timer) return stop();
@@ -262,6 +269,15 @@ function wireEssay(s) {
       timer = setInterval(() => { k++; if (k >= steps.length) return stop(); show(k); }, 2200);
     };
     show(0);
+  }
+  /* figure: 2x2 matrix */
+  const mx = ess.querySelector(".matrix");
+  if (mx) {
+    const cells = mx.querySelectorAll(".m-cell"), panel = mx.querySelector(".m-panel");
+    const show = k => { const c = s.matrix.cells[k]; cells.forEach((b, j) => b.classList.toggle("on", j === k));
+      panel.innerHTML = `<p class="c-role">${c.name}</p><p class="c-does">${c.d}</p>${c.ex ? `<p class="c-note">${c.ex}</p>` : ""}`; };
+    cells.forEach(b => b.onclick = () => show(+b.dataset.k));
+    show(Math.max(0, s.matrix.cells.findIndex(c => c.best)));
   }
   /* figure: creative scores */
   const sc = ess.querySelector(".scores");

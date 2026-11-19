@@ -105,7 +105,69 @@ window.SESSIONS = [
   },
 
   /* ---------- Session 3 ---------- */
-  { ready: false },
+  {
+    speaker: "Cindy Leong",
+    role: "Head of Scaled Agency Development, APAC",
+    company: "LinkedIn",
+    date: "13/11/2026",
+    title: "From SEO to GEO",
+    definition: "Generative Engine Optimisation (GEO) is the practice of making a brand's content easy for AI assistants such as ChatGPT, Gemini or Perplexity to find, understand and cite in their answers. Where SEO aims to rank a web page in search results, GEO aims for the brand to be part of the answer itself, which raises the importance of credible, expert content on trusted platforms such as LinkedIn.",
+    learnings: [
+      { t: "From ranking in results to being part of the answer",
+        d: "As people ask AI assistants instead of scrolling through search results, visibility no longer depends only on ranking a page. Brands now need to be mentioned, and described accurately, in AI-generated answers. A new KPI is emerging alongside the classic ones: AI visibility, or share of model, which tracks how often and how accurately AI assistants mention a brand." },
+      { t: "Know the audience before planning the media",
+        d: "Every media plan rests on two kinds of audience data: insights, which are qualitative and explain who the audience is (from tools such as GWI, Nielsen or GA4), and size, which is quantitative and estimates how many people can be reached (from the buying platforms). LinkedIn's Campaign Manager, for instance, estimates audiences by job title, industry, company size and professional interests, with a minimum of 300 members to serve ads and 50,000 or more recommended. Good audience understanding reduces media wastage, meaning ads shown to people outside the target." },
+      { t: "AI speeds up research, but real data must confirm it",
+        d: "Deep research agents and \u201csynthetic audiences\u201d (AI twins of consumers) can draft an audience brief in minutes. The evidence calls for caution: Pew found that AI twins flattened opinions (98% agreement on one question against 42% among real people), and Strat7 found synthetic willingness to pay 16% too high and right only 47% of the time. The recommended use is to form hypotheses with AI, validate them with real data, and cap synthetic respondents at 10 to 20% of a sample." }
+    ],
+
+    essay: {
+      title: "REFLECTION",
+      standfirst: "Search is moving from lists of links to answers written by AI. This reflection considers what that shift means for how brands are found, how audiences are understood, and why the evidence behind marketing decisions matters more than ever.",
+      chapters: [
+        { h: "From search results to answers", blocks: [
+          "For two decades, being visible online meant ranking well in search engines. Generative AI changes the format of the result: instead of a list of pages to compare, the user increasingly receives a single synthesised answer. The question for a brand is therefore no longer only \u201cwhere do we rank?\u201d but \u201care we mentioned, and are we described correctly?\u201d",
+          "This shift gives new weight to credible, consistent content published where expertise is visible, which is the case LinkedIn makes for its own platform. It also creates a new indicator, AI visibility or share of model.[[Share of model measures how often, and how accurately, AI assistants mention a brand when answering relevant questions. It sits alongside classic KPIs rather than replacing them.]] In my view, the logic is familiar from How Brands Grow: being easily recalled in buying situations now includes being retrieved by the systems people consult before they buy.",
+          "I would nevertheless remain cautious. Brands do not control how an AI model summarises them, answers can be inaccurate, and the methods for measuring this visibility are still immature. GEO is worth understanding, but it should complement, not replace, the fundamentals of a clear positioning and a recognisable brand."
+        ]},
+        { h: "Knowing who to reach", blocks: [
+          "The second part of the session placed audience understanding at the heart of media planning. A plan moves through successive decisions, from the business context to the final media plan, and each stage depends on the quality of the previous one.",
+          { figure: "chain", caption: "The stages of media planning. Click a stage, or play the sequence.", play: "Play the stages" },
+          "The distinction between audience insights and audience size struck me as particularly useful. Insights explain who the audience is and what motivates it; size estimates how many of these people a platform can actually reach. Confusing the two leads either to precise messages with no reach, or to large reach with no relevance. Platform estimates should also be read critically, since they come from the companies selling the advertising space.[[With AI-driven targeting, such as broad automated audiences, platform estimates increasingly describe a large reachable pool rather than a precisely defined target.]]",
+          "Understanding an audience also means recognising that not all customers bring the same value. Some generate long-term profit, while others mainly respond to discounts. For a retailer such as Sephora, this changes where investment should go.",
+          { figure: "matrix", caption: "Customer quality: what customers receive from a company, and what they deliver to it. Click a quadrant." }
+        ]},
+        { h: "Synthetic answers, real people", blocks: [
+          "AI is now built into most research tools, and \u201csynthetic audiences\u201d promise survey answers in hours rather than weeks. The appeal is obvious for teams under time and budget pressure.",
+          "The evidence presented, however, shows clear limits. AI twins tend to flatten the diversity of opinion: on one question, 98% of synthetic respondents agreed, against 42% of real people. Another study found synthetic willingness to pay 16% too high, and correct only 47% of the time.[[Sources listed in the session slides include Pew Research (September 2026) and Research Live (July 2026).]] A model reproduces the average of what it has learned; real consumers are inconsistent, emotional and diverse, which is precisely what marketers need to understand.",
+          "This echoes what I am learning in consumer and market research: findings are only as reliable as the people behind them. I see AI as a useful way to explore a topic and form hypotheses quickly, but decisions on positioning, pricing or targeting should rest on validated data from real consumers, interpreted by people who understand the context."
+        ]},
+        { h: "What I will do with it", blocks: [
+          "In my projects, I will use free tools such as Google Trends, TikTok or Reddit to form first hypotheses about an audience, then check them against real data before drawing conclusions. On LinkedIn, I will treat my own profile as content that should stay credible and consistent.",
+          "In fashion and beauty, I take away two ideas: brands must now consider how AI describes them, and the most valuable customers are not always the cheapest to acquire. Both require human judgement on what the brand stands for and whom it truly serves."
+        ]}
+      ]
+    },
+
+    chain: [
+      { role: "Business context", does: "Understand the brand's objectives, market and constraints before any media decision.", note: "Media planning is about answering the brief, and about giving stakeholders confidence." },
+      { role: "Audience insights", does: "Qualitative understanding of who the audience is: behaviours, interests, channels, purchase drivers.", note: "Tools: GWI, Nielsen, GA4, or free ones such as Google Trends and Reddit." },
+      { role: "Channel decisioning", does: "Choose where to reach the audience, among more platforms than ever.", note: "Fragmentation and data overload can paralyse choice." },
+      { role: "Investment decisioning", does: "Split the budget across channels and funnel stages, balancing brand building and short-term sales.", note: "Beyond a channel's saturation point, extra spend brings diminishing returns." },
+      { role: "Measurement plan", does: "Define the KPIs and methods that will show what worked: mix modelling, incrementality tests, attribution.", note: "No single tool answers every question." },
+      { role: "Media plan", does: "The tactical execution: specific platforms, budgets, targeting and timing.", note: "Educated decisions are required at every stage.", human: true }
+    ],
+    matrix: {
+      y: "Value delivered to the company",
+      x: "Value received from the company",
+      cells: [
+        { name: "Vulnerable customers", tag: "High value, little return", d: "Highly valuable to the company but receive little value in return, so they are at risk of leaving.", ex: "Worth protecting before a competitor offers them more." },
+        { name: "Star customers", tag: "High value both ways", d: "Receive high value from the company and deliver high value to it.", ex: "At Sephora: shops several times a year, loyalty member, buys new launches at full price.", best: true },
+        { name: "Lost causes", tag: "Little value either way", d: "Derive little value from the product and bring little profit in return.", ex: "Rarely worth significant acquisition spend." },
+        { name: "Free riders", tag: "Happy, not profitable", d: "Take advantage of every offer, discount and promotion: very satisfied, but not very profitable.", ex: "At Sephora: buys during sales events, loves free samples and birthday gifts, waits for a deal." }
+      ]
+    }
+  },
 
   /* ---------- Session 4 ---------- */
   { ready: false },
