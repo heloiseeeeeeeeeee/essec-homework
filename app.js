@@ -213,6 +213,12 @@ function essayHTML(s) {
         <span class="m-x">${m.x}</span></div>
       <div class="c-panel m-panel" aria-live="polite"></div>
     </figure>`; }
+    if (name === "split" && s.split) { const sp = s.split; return `<figure class="fig split" data-fig="split">
+      <figcaption><b>Figure ${figN}</b> ${b.caption || "Click a group."}</figcaption>
+      <div class="sp-dots">${Array.from({ length: 100 }, (_, k) => `<i class="${k < sp.parts[0].pct ? "a" : "b"}"></i>`).join("")}</div>
+      <div class="s-tabs sp-tabs">${sp.parts.map((p, k) => `<button data-k="${k}" aria-selected="false" data-cursor="Show">${p.pct}% ${p.label}</button>`).join("")}</div>
+      <div class="c-panel sp-panel" aria-live="polite"></div>
+    </figure>`; }
     return "";
   };
   return `<section class="essay"><div class="e-sheet">
@@ -278,6 +284,16 @@ function wireEssay(s) {
       panel.innerHTML = `<p class="c-role">${c.name}</p><p class="c-does">${c.d}</p>${c.ex ? `<p class="c-note">${c.ex}</p>` : ""}`; };
     cells.forEach(b => b.onclick = () => show(+b.dataset.k));
     show(Math.max(0, s.matrix.cells.findIndex(c => c.best)));
+  }
+  /* figure: 100-dot split */
+  const sp = ess.querySelector(".split");
+  if (sp) {
+    const tabs = sp.querySelectorAll(".sp-tabs button"), panel = sp.querySelector(".sp-panel");
+    const show = k => { const p = s.split.parts[k];
+      tabs.forEach((b, j) => b.setAttribute("aria-selected", j === k)); sp.dataset.on = k;
+      panel.innerHTML = `<p class="c-role">${p.pct}% ${p.label}</p><p class="c-does">${p.d}</p>${p.ex ? `<p class="c-note">${p.ex}</p>` : ""}`; };
+    tabs.forEach(b => b.onclick = () => show(+b.dataset.k));
+    show(0);
   }
   /* figure: creative scores */
   const sc = ess.querySelector(".scores");

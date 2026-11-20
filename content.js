@@ -110,63 +110,58 @@ window.SESSIONS = [
     role: "Head of Scaled Agency Development, APAC",
     company: "LinkedIn",
     date: "13/11/2026",
-    title: "From SEO to GEO",
-    definition: "Generative Engine Optimisation (GEO) is the practice of making a brand's content easy for AI assistants such as ChatGPT, Gemini or Perplexity to find, understand and cite in their answers. Where SEO aims to rank a web page in search results, GEO aims for the brand to be part of the answer itself, which raises the importance of credible, expert content on trusted platforms such as LinkedIn.",
+    title: "LinkedIn",
+    definition: "LinkedIn is the world's largest professional network, with more than one billion members in over 200 countries and regions. Beyond profiles and job offers, it works as a media platform where professionals follow companies, read expert content and make business decisions, which allows both B2B and B2C brands to reach people in a professional mindset.",
     learnings: [
-      { t: "From ranking in results to being part of the answer",
-        d: "As people ask AI assistants instead of scrolling through search results, visibility no longer depends only on ranking a page. Brands now need to be mentioned, and described accurately, in AI-generated answers. A new KPI is emerging alongside the classic ones: AI visibility, or share of model, which tracks how often and how accurately AI assistants mention a brand." },
-      { t: "Know the audience before planning the media",
-        d: "Every media plan rests on two kinds of audience data: insights, which are qualitative and explain who the audience is (from tools such as GWI, Nielsen or GA4), and size, which is quantitative and estimates how many people can be reached (from the buying platforms). LinkedIn's Campaign Manager, for instance, estimates audiences by job title, industry, company size and professional interests, with a minimum of 300 members to serve ads and 50,000 or more recommended. Good audience understanding reduces media wastage, meaning ads shown to people outside the target." },
-      { t: "AI speeds up research, but real data must confirm it",
-        d: "Deep research agents and \u201csynthetic audiences\u201d (AI twins of consumers) can draft an audience brief in minutes. The evidence calls for caution: Pew found that AI twins flattened opinions (98% agreement on one question against 42% among real people), and Strat7 found synthetic willingness to pay 16% too high and right only 47% of the time. The recommended use is to form hypotheses with AI, validate them with real data, and cap synthetic respondents at 10 to 20% of a sample." }
+      { t: "A large audience in a professional mindset",
+        d: "LinkedIn reports more than one billion members, over 200 countries and regions and more than 69 million companies on the platform. According to LinkedIn, four in five members drive business decisions, and its audience has twice the buying power of the average web audience. People come to the platform to learn, build a career and follow their industry, so content is judged on usefulness and credibility more than on entertainment." },
+      { t: "B2B: speak to the 95%, not only the 5% ready to buy",
+        d: "Research by the Ehrenberg-Bass Institute for LinkedIn's B2B Institute suggests that only about 5% of business buyers are in the market for a given product at any time; the other 95% will buy later. Purchases are made by buying groups of around ten people, and LinkedIn data indicates that around 40% of deals are lost to indecision rather than to a competitor. B2B brands therefore need to build familiarity and trust with the whole buying group over time, not only collect leads." },
+      { t: "Best practices for members and brands",
+        d: "For members: a complete profile with a photo, a clear headline and regular, genuine engagement. For brands, LinkedIn's own guidance: complete Pages get 30% more weekly views, posting weekly brings a 2x lift in engagement, images double the comment rate and video attracts more engagement still. Employees can be a brand's most credible voices. B2C brands perform best with content that feels native to the platform: behind the scenes, values, innovation and people, rather than direct selling." }
     ],
 
     essay: {
       title: "REFLECTION",
-      standfirst: "Search is moving from lists of links to answers written by AI. This reflection considers what that shift means for how brands are found, how audiences are understood, and why the evidence behind marketing decisions matters more than ever.",
+      standfirst: "LinkedIn is often seen as a place to look for a job. This reflection considers it from three angles: the user building a professional identity, the B2B brand selling to groups rather than individuals, and the consumer brand trying to earn attention in a professional space.",
       chapters: [
-        { h: "From search results to answers", blocks: [
-          "For two decades, being visible online meant ranking well in search engines. Generative AI changes the format of the result: instead of a list of pages to compare, the user increasingly receives a single synthesised answer. The question for a brand is therefore no longer only \u201cwhere do we rank?\u201d but \u201care we mentioned, and are we described correctly?\u201d",
-          "This shift gives new weight to credible, consistent content published where expertise is visible, which is the case LinkedIn makes for its own platform. It also creates a new indicator, AI visibility or share of model.[[Share of model measures how often, and how accurately, AI assistants mention a brand when answering relevant questions. It sits alongside classic KPIs rather than replacing them.]] In my view, the logic is familiar from How Brands Grow: being easily recalled in buying situations now includes being retrieved by the systems people consult before they buy.",
-          "I would nevertheless remain cautious. Brands do not control how an AI model summarises them, answers can be inaccurate, and the methods for measuring this visibility are still immature. GEO is worth understanding, but it should complement, not replace, the fundamentals of a clear positioning and a recognisable brand."
+        { h: "A platform built on professional identity", blocks: [
+          "What distinguishes LinkedIn from other social platforms is that members appear under their real name, job and employer. This makes the network more credible, but it also changes how people behave: they are not only consuming content, they are managing a professional reputation. Every like, comment or post is, to some extent, public and attached to a career.",
+          "From the user's point of view, this creates real value. A complete, consistent profile makes a person findable by recruiters and peers, and following companies and experts turns the feed into a source of learning about an industry. It also explains why the audience is attractive to brands: people arrive in a mindset of progress and information rather than distraction.",
+          "I would add a note of caution. The same reputational logic can encourage polished self-promotion and a culture of performance, where posts are written to impress rather than to inform. Figures on audience and buying power also come from the platform itself, which has an interest in presenting them favourably.[[Membership, decision-making and buying-power figures are reported by LinkedIn. They are useful orders of magnitude, but should be compared with independent sources before being used to justify a media budget.]] Using LinkedIn well therefore means staying authentic and reading its numbers critically."
         ]},
-        { h: "Knowing who to reach", blocks: [
-          "The second part of the session placed audience understanding at the heart of media planning. A plan moves through successive decisions, from the business context to the final media plan, and each stage depends on the quality of the previous one.",
-          { figure: "chain", caption: "The stages of media planning. Click a stage, or play the sequence.", play: "Play the stages" },
-          "The distinction between audience insights and audience size struck me as particularly useful. Insights explain who the audience is and what motivates it; size estimates how many of these people a platform can actually reach. Confusing the two leads either to precise messages with no reach, or to large reach with no relevance. Platform estimates should also be read critically, since they come from the companies selling the advertising space.[[With AI-driven targeting, such as broad automated audiences, platform estimates increasingly describe a large reachable pool rather than a precisely defined target.]]",
-          "Understanding an audience also means recognising that not all customers bring the same value. Some generate long-term profit, while others mainly respond to discounts. For a retailer such as Sephora, this changes where investment should go.",
-          { figure: "matrix", caption: "Customer quality: what customers receive from a company, and what they deliver to it. Click a quadrant." }
+        { h: "B2B: selling to groups, not individuals", blocks: [
+          "The most useful idea for me concerned B2B buying. A business purchase is rarely the decision of one person: it involves a buying group, often around ten people with different priorities, from users to finance and management. And at any given moment, only a small minority of potential buyers are actively looking.",
+          { figure: "split", caption: "The 95:5 rule. Out of 100 potential business buyers, how many are in the market today? Click each group." },
+          "This connects directly to How Brands Grow. The 95:5 rule comes from the Ehrenberg-Bass Institute, the same research centre as Byron Sharp, and applies the logic of mental availability to B2B: brands must be known and trusted before the need arises, so that they come to mind when the buying group finally starts searching.[[Dawes, J. (2021). Advertising effectiveness and the 95-5 rule. Ehrenberg-Bass Institute, for the LinkedIn B2B Institute.]] A strategy focused only on lead generation reaches the 5% and ignores the rest.",
+          "The data on indecision also struck me. If many deals are lost because the group cannot agree, the role of marketing is not only to persuade but to reduce perceived risk: helping each member of the group understand the choice and feel safe making it. This is, in my view, where credible and expert content matters more than volume of advertising."
         ]},
-        { h: "Synthetic answers, real people", blocks: [
-          "AI is now built into most research tools, and \u201csynthetic audiences\u201d promise survey answers in hours rather than weeks. The appeal is obvious for teams under time and budget pressure.",
-          "The evidence presented, however, shows clear limits. AI twins tend to flatten the diversity of opinion: on one question, 98% of synthetic respondents agreed, against 42% of real people. Another study found synthetic willingness to pay 16% too high, and correct only 47% of the time.[[Sources listed in the session slides include Pew Research (September 2026) and Research Live (July 2026).]] A model reproduces the average of what it has learned; real consumers are inconsistent, emotional and diverse, which is precisely what marketers need to understand.",
-          "This echoes what I am learning in consumer and market research: findings are only as reliable as the people behind them. I see AI as a useful way to explore a topic and form hypotheses quickly, but decisions on positioning, pricing or targeting should rest on validated data from real consumers, interpreted by people who understand the context."
+        { h: "From the customer's point of view", blocks: [
+          "For B2C brands, LinkedIn is less obvious, but customers are also professionals. Consumer brands can use the platform to speak about what usually stays invisible to shoppers: the people behind the products, innovation, sustainability commitments and company culture. In sectors such as beauty and luxury, it seems better suited to building reputation and attracting talent than to selling products directly.",
+          { figure: "chain", caption: "Best practices for a brand Page, according to LinkedIn's guidance. Click a step, or play the sequence.", play: "Play the steps" },
+          "What these practices have in common is that they treat the audience as people looking for something useful. From a customer's perspective, hard selling feels out of place on a professional network, while honest and informative content is more likely to be read and shared. This content also has a second life: as buyers increasingly ask AI assistants for advice before contacting a company, credible information published on trusted platforms is more likely to be found and cited. I see this as a reason for more rigour in what brands publish, rather than for producing more content."
         ]},
         { h: "What I will do with it", blocks: [
-          "In my projects, I will use free tools such as Google Trends, TikTok or Reddit to form first hypotheses about an audience, then check them against real data before drawing conclusions. On LinkedIn, I will treat my own profile as content that should stay credible and consistent.",
-          "In fashion and beauty, I take away two ideas: brands must now consider how AI describes them, and the most valuable customers are not always the cheapest to acquire. Both require human judgement on what the brand stands for and whom it truly serves."
+          "For myself, I will complete my LinkedIn profile, write a clear headline that reflects my interest in fashion and beauty marketing, and follow brands and professionals in this sector to understand how they communicate.",
+          "As a future marketer, I take away that LinkedIn should be judged over time, on reputation and trust, and not only on immediate leads. Choosing what a brand says there, and how honestly, remains a human responsibility."
         ]}
       ]
     },
 
-    chain: [
-      { role: "Business context", does: "Understand the brand's objectives, market and constraints before any media decision.", note: "Media planning is about answering the brief, and about giving stakeholders confidence." },
-      { role: "Audience insights", does: "Qualitative understanding of who the audience is: behaviours, interests, channels, purchase drivers.", note: "Tools: GWI, Nielsen, GA4, or free ones such as Google Trends and Reddit." },
-      { role: "Channel decisioning", does: "Choose where to reach the audience, among more platforms than ever.", note: "Fragmentation and data overload can paralyse choice." },
-      { role: "Investment decisioning", does: "Split the budget across channels and funnel stages, balancing brand building and short-term sales.", note: "Beyond a channel's saturation point, extra spend brings diminishing returns." },
-      { role: "Measurement plan", does: "Define the KPIs and methods that will show what worked: mix modelling, incrementality tests, attribution.", note: "No single tool answers every question." },
-      { role: "Media plan", does: "The tactical execution: specific platforms, budgets, targeting and timing.", note: "Educated decisions are required at every stage.", human: true }
-    ],
-    matrix: {
-      y: "Value delivered to the company",
-      x: "Value received from the company",
-      cells: [
-        { name: "Vulnerable customers", tag: "High value, little return", d: "Highly valuable to the company but receive little value in return, so they are at risk of leaving.", ex: "Worth protecting before a competitor offers them more." },
-        { name: "Star customers", tag: "High value both ways", d: "Receive high value from the company and deliver high value to it.", ex: "At Sephora: shops several times a year, loyalty member, buys new launches at full price.", best: true },
-        { name: "Lost causes", tag: "Little value either way", d: "Derive little value from the product and bring little profit in return.", ex: "Rarely worth significant acquisition spend." },
-        { name: "Free riders", tag: "Happy, not profitable", d: "Take advantage of every offer, discount and promotion: very satisfied, but not very profitable.", ex: "At Sephora: buys during sales events, loves free samples and birthday gifts, waits for a deal." }
+    split: {
+      parts: [
+        { label: "in market now", pct: 5, d: "Buyers actively looking for a solution today. Lead generation and sales activity can capture this demand.", ex: "Measured by leads, conversions and pipeline." },
+        { label: "in market later", pct: 95, d: "Future buyers who will not purchase for months or years. Brand building aims to be known and trusted by them before the need arises.", ex: "Measured by reach, awareness and recall over time, not cost per lead." }
       ]
-    }
+    },
+    chain: [
+      { role: "Complete the Page", does: "Logo, cover image, overview with relevant keywords, company information and a call-to-action button.", note: "Complete Pages get 30% more weekly views." },
+      { role: "Post weekly", does: "Publish regularly, at times when the audience is most active.", note: "Weekly posting brings a 2x lift in engagement." },
+      { role: "Use rich media", does: "Images, image collages, documents and video rather than plain text.", note: "Images bring a 2x higher comment rate." },
+      { role: "Humanise the brand", does: "Show the people, culture and values behind the company, and celebrate employees.", note: "Behind-the-scenes content feels native to the platform." },
+      { role: "Involve employees", does: "Invite employees to follow the Page and share important posts.", note: "Posts shared by employees often feel more credible than the brand's own." },
+      { role: "Measure and adjust", does: "Use Page analytics to track visitors, followers and content performance, and compare with competitors.", note: "A human decides what to keep, change or stop.", human: true }
+    ]
   },
 
   /* ---------- Session 4 ---------- */

@@ -373,3 +373,11 @@ footer{background:var(--denim) repeating-linear-gradient(45deg,rgba(255,255,255,
 .m-cell.best.on{background:var(--blue);border-color:var(--blue)}
 .m-cell.on em{color:rgba(255,255,255,.75)}
 @media (max-width:860px){.m-grid{aspect-ratio:auto}.m-cell{min-height:96px;padding:12px}}
+
+/* figure: 100-dot split */
+.sp-dots{display:grid;grid-template-columns:repeat(20,1fr);gap:clamp(4px,.8vw,9px);margin-bottom:24px}
+.sp-dots i{aspect-ratio:1;border-radius:50%;background:var(--fog);transition:background .5s,transform .5s var(--out)}
+.split[data-on="0"] .sp-dots i.a{background:var(--blue);transform:scale(1.15)}
+.split[data-on="0"] .sp-dots i.b{background:#e4e3de}
+.split[data-on="1"] .sp-dots i.b{background:var(--ink)}
+.split[data-on="1"] .sp-dots i.a{background:#e4e3de}
