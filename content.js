@@ -142,8 +142,8 @@ window.SESSIONS = [
           "What these practices have in common is that they treat the audience as people looking for something useful. From a customer's perspective, hard selling feels out of place on a professional network, while honest and informative content is more likely to be read and shared. This content also has a second life: as buyers increasingly ask AI assistants for advice before contacting a company, credible information published on trusted platforms is more likely to be found and cited. I see this as a reason for more rigour in what brands publish, rather than for producing more content."
         ]},
         { h: "What I will do with it", blocks: [
-          "For myself, I will complete my LinkedIn profile, write a clear headline that reflects my interest in fashion and beauty marketing, and follow brands and professionals in this sector to understand how they communicate.",
-          "As a future marketer, I take away that LinkedIn should be judged over time, on reputation and trust, and not only on immediate leads. Choosing what a brand says there, and how honestly, remains a human responsibility."
+          "As a future marketer in fashion and beauty, I would use LinkedIn mainly for what it does best in these sectors: building reputation, showing the people and expertise behind a brand, and attracting talent, rather than selling products directly.",
+          "I also take away that LinkedIn should be judged over time, on trust and familiarity, and not only on immediate leads. For B2B partners such as retailers or suppliers, this means speaking to the whole buying group long before a decision is made. Choosing what a brand says there, and how honestly, remains a human responsibility."
         ]}
       ]
     },
