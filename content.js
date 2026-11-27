@@ -174,8 +174,6 @@ window.SESSIONS = [
     subtitle: "Career and networking",
     definition: "Vitaliy Nechaev leads the ASEAN expansion of Cape.io, a platform that automates the production, checking and delivery of advertising campaigns across channels. Before that, he founded his own VR agency in Singapore, which he later sold to Entropia (now part of Accenture Song). The session focused mainly on his career path and achievements, and on practical advice: how to network, how to be remembered and where to start a career. It ended with a short demo of Cape.io.",
     learnings: [
-      { t: "Start where opportunities concentrate",
-        d: "Singapore hosts the regional headquarters of many brands, agencies and technology companies, works in English and serves as a gateway to Southeast Asia. Starting a career here gives early exposure to several markets at once. The speaker's own path shows it: he moved to Singapore in 2012, founded a VR agency in 2015, later sold it to Entropia (now part of Accenture Song), and now leads the ASEAN expansion of Cape.io, a campaign automation platform he briefly demoed at the end of the session." },
       { t: "Networking: give first, follow up, stay in touch",
         d: "A network is built before it is needed. Give before you ask (share an article, make an introduction), follow up after every meeting, stay in touch regularly, and ask for advice rather than favours. Acquaintances matter as much as close contacts: a LinkedIn experiment with 20 million users found that moderately weak ties were the most useful for finding new jobs." },
       { t: "Stand out: stop trying to win crowded races",
@@ -190,10 +188,6 @@ window.SESSIONS = [
           "Starting a career in a regional hub such as Singapore offers early exposure to many markets, brands and cultures at once. For a marketer, this is valuable: campaigns here are often designed for several countries, which teaches adaptation from the very beginning.",
           "Location alone is not enough, however. The market is small and competitive, and many international graduates aim for the same roles. Being in the right place creates opportunities; making use of them still depends on the network and the skills a person builds there."
         ]},
-        { h: "Networking as relationship building", blocks: [
-          "Networking is often understood as collecting contacts at events. A more useful view is to treat it as building trust over time, by giving before asking and following up after each meeting. Research also shows the value of a broad network: acquaintances and former colleagues often bring the new information that close contacts cannot.[[Granovetter, M. (1973). The Strength of Weak Ties. Rajkumar, K. et al. (2022). A causal test of the strength of weak ties. Science. Levin, D., Walter, J. and Murnighan, J.K. (2011). Dormant ties: The value of reconnecting. Organization Science.]]",
-          { figure: "matrix", caption: "Four kinds of professional ties, by how often you are in touch and how much trust exists. Click a quadrant." }
-        ]},
         { h: "Standing out", blocks: [
           "The advice to stop trying to win crowded races applies directly to careers. Instead of competing on the same generic profile as everyone else, it is more effective to find a specific need that few people address, and to become credible on it.[[The idea echoes Blue Ocean Strategy, which contrasts crowded markets with uncontested ones. Kim, W.C. and Mauborgne, R. (2005). Harvard Business School Press.]]",
           "One caution: a pocket may be quiet simply because there is little demand. This is why proving value with real results matters as much as finding the niche."
@@ -201,17 +195,6 @@ window.SESSIONS = [
         { h: "What I will do with it", blocks: [
           "Fashion and beauty marketing is a crowded race. As a future marketer, I want to find a specific angle where I can bring proven value, such as Asian markets or digital campaign operations, and build relationships with the people working in it over time, starting from Singapore."
         ]}
-      ]
-    },
-
-    matrix: {
-      y: "Trust",
-      x: "How often you are in touch",
-      cells: [
-        { name: "Dormant ties", tag: "High trust, rare contact", d: "Former colleagues, classmates or managers you have lost touch with. Trust remains, and their experience has moved on.", ex: "Reconnecting with them often brings fresh and useful advice." },
-        { name: "Close ties", tag: "High trust, frequent contact", d: "Close colleagues, mentors and friends: strong support and honest feedback.", ex: "But they often share your information and circles." },
-        { name: "Weak ties", tag: "Low trust, rare contact", d: "Acquaintances met at events, guest speakers, people you follow on LinkedIn.", ex: "Often the source of new information and opportunities.", best: true },
-        { name: "Familiar faces", tag: "Frequent contact, little depth", d: "People you see often but do not really know, such as classmates in other groups or colleagues in other teams.", ex: "Easy relationships to deepen with a coffee or a follow-up." }
       ]
     }
   },
