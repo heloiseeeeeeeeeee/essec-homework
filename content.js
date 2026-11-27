@@ -170,63 +170,44 @@ window.SESSIONS = [
     role: "Head of ASEAN",
     company: "Cape.io",
     date: "",
-    title: "Cape.io",
-    definition: "Cape.io is an advertising technology platform for what it calls Intelligent Campaign Automation. It brings creative production, compliance checks and media delivery into a single workflow, so that brands and agencies can adapt one campaign into the many formats each channel requires, check it, and deliver it to TV, connected TV, social and digital platforms across markets.",
+    title: "Career & networking",
+    definition: "Professional networking means building and maintaining relationships with people in one's field, based on mutual help and trust. Together with where a career starts and how a person stands out, it shapes how opportunities arrive, often before they are ever advertised.",
     learnings: [
-      { t: "One workflow from creative to delivery",
-        d: "Behind every campaign sits heavy operational work: dozens of versions, formats and specifications, legal checks and deliveries to each channel, usually handled by separate teams and tools. Cape.io (formerly Peach) connects production, validation and activation in one platform, with more than 18,000 destinations and brands in over 110 countries. Automation handles the repetitive tasks (adapting formats, checking specifications, a first compliance screening), while the creative idea and the final approval stay with people." },
-      { t: "Stop trying to win crowded races",
-        d: "The core advice of the session: most expensive mistakes come from competing where everyone already is, and the wins come from \u201cquiet pockets\u201d where few people are looking. The same logic applies to a business as to a career: focus on one specific need, prove it with real results, and work with a strong team to deliver them. The speaker's own path illustrates it: a VR agency founded in Singapore in 2015, later sold to Entropia (now part of Accenture Song), before leading Cape.io's expansion in ASEAN." },
-      { t: "Networking is a long-term investment, not a transaction",
-        d: "A strong network is built before it is needed. General advice: give before you ask (share an article, make an introduction), follow up after every meeting, stay in touch every month or two, and ask for advice rather than favours. Diversity matters: a large LinkedIn experiment with 20 million users found that moderately weak ties, people you know but not closely, were the most useful for finding new jobs." }
+      { t: "Start where opportunities concentrate",
+        d: "Singapore hosts the regional headquarters of many brands, agencies and technology companies, works in English and serves as a gateway to Southeast Asia. Starting a career here gives early exposure to several markets at once. The speaker's own path shows it: he moved to Singapore in 2012, founded a VR agency in 2015, later sold it to Entropia (now part of Accenture Song), and now leads the ASEAN expansion of Cape.io, a campaign automation platform he briefly demoed." },
+      { t: "Networking: give first, follow up, stay in touch",
+        d: "A network is built before it is needed. Give before you ask (share an article, make an introduction), follow up after every meeting, stay in touch regularly, and ask for advice rather than favours. Acquaintances matter as much as close contacts: a LinkedIn experiment with 20 million users found that moderately weak ties were the most useful for finding new jobs." },
+      { t: "Stand out: stop trying to win crowded races",
+        d: "Most expensive mistakes come from competing where everyone already is; the wins come from \u201cquiet pockets\u201d where few people are looking. For a career as for a business: focus on one specific need, prove your value with real results, and surround yourself with a strong team." }
     ],
 
     essay: {
       title: "REFLECTION",
-      standfirst: "Consumers see a single advert; behind it lies a chain of versions, checks and deliveries that rarely gets discussed. This reflection looks at that operational side of marketing, at what should and should not be automated, and at two pieces of career advice: avoiding crowded races, and building relationships over time.",
+      standfirst: "This session was less about a product than about careers: where to start, how to build a network and how to stand out. Three simple ideas, each with its limits.",
       chapters: [
-        { h: "The hidden work behind every campaign", blocks: [
-          "Marketing courses usually focus on strategy and creativity. The demo made visible a less glamorous reality: a single campaign may need to exist in dozens of formats, lengths and languages, each checked against the specifications of a platform and the rules of a market, then delivered to broadcasters, social networks and digital publishers. As channels multiply, from connected TV to digital out-of-home, this work grows faster than teams do.",
-          { figure: "chain", caption: "From campaign plan to delivery, in one workflow. Click a stage, or play the sequence.", play: "Play the stages" },
-          "From the perspective of our digital platforms course, Cape.io is itself a B2B platform: it sits between advertisers, agencies, production studios and media owners, and its value grows with the number of destinations it connects.[[According to its website, Cape.io connects to more than 18,000 destinations across social, display, connected TV and linear TV. These figures are reported by the company.]] This is a reminder that platforms are not only consumer apps; much of the digital economy runs on infrastructure that end users never see.",
-          "I would remain cautious about the promise of a single system for everything. Centralising workflows makes them more efficient, but also makes a brand more dependent on one provider, its integrations and its pricing. Efficiency is one criterion among others when choosing such tools."
-        ]},
-        { h: "What should be automated, and what should not", blocks: [
-          "The demo suggested a useful distinction. Some tasks are repetitive and rule-based: resizing an asset, checking a file format or a duration, delivering the right version to the right channel. Automating them reduces errors and frees time. Other tasks depend on judgement: the creative idea, the tone that suits a market, the decision that a message is right for the brand.",
-          "Compliance sits between the two. An AI check against advertising rules can be a valuable first filter, especially across many markets, but responsibility for what is published remains with the advertiser, and local regulations and sensitivities often require human and sometimes legal review.[[Cape.io describes its AI compliance check as covering more than 20 global markets. A first automated screening does not replace the advertiser's own responsibility under each market's rules.]] Similarly, testing ideas on AI personas may help explore options, but it cannot replace feedback from real consumers.",
-          "For fashion and beauty, where a launch can run in many countries and on many platforms at once, I see real value in tools that protect consistency of brand assets across formats. The risk is the opposite one: that automated adaptation produces uniform content and erases the local nuances that make a campaign resonate. Deciding where to standardise and where to adapt is a strategic choice that should stay human."
-        ]},
-        { h: "Quiet pockets rather than crowded races", blocks: [
-          "The central message of the session was simple: stop trying to win crowded races. Competing where everyone already is means competing on price, visibility or effort against many equally capable players. Finding a specific need that few others address allows a person or a company to build a position more quickly and more durably.",
-          "This idea echoes a well-known strategy framework, which contrasts saturated \u201cred oceans\u201d with uncontested \u201cblue oceans\u201d of demand.[[Kim, W.C. and Mauborgne, R. (2005). Blue Ocean Strategy. Harvard Business School Press.]] Cape.io itself follows this logic: rather than competing with creative agencies or media platforms, it focuses on one operational problem that most actors in the industry share but few solve.",
-          "I would add one caution. A pocket can be quiet because nobody has seen it, but also because there is no real demand. This is why the second part of the advice matters as much as the first: proving the idea with real results. In marketing terms, a niche must still be validated by customers before it is worth investing in."
+        { h: "Where to start", blocks: [
+          "Starting a career in a regional hub such as Singapore offers early exposure to many markets, brands and cultures at once. For a marketer, this is valuable: campaigns here are often designed for several countries, which teaches adaptation from the very beginning.",
+          "Location alone is not enough, however. The market is small and competitive, and many international graduates aim for the same roles. Being in the right place creates opportunities; making use of them still depends on the network and the skills a person builds there."
         ]},
         { h: "Networking as relationship building", blocks: [
-          "The session also covered networking, and it changed how I see the word. Networking is often understood as collecting contacts at events. A more useful view is to treat it as building relationships of trust over time, in which both sides bring something.",
-          "Research supports a broad rather than a narrow network. Close contacts offer support, but often know the same things we do; acquaintances bring new information and opportunities.[[Granovetter, M. (1973). The Strength of Weak Ties. American Journal of Sociology. Rajkumar, K. et al. (2022). A causal test of the strength of weak ties. Science.]] Former colleagues we have lost touch with can also be a valuable source of fresh advice, because trust remains while their experience has moved on.[[Levin, D., Walter, J. and Murnighan, J.K. (2011). Dormant ties: The value of reconnecting. Organization Science.]]",
-          { figure: "matrix", caption: "Four kinds of professional ties, by how often you are in touch and how much trust exists. Click a quadrant." },
-          "What I find most convincing is the idea of giving before asking. Sharing a relevant article, making an introduction or simply following up with thanks costs little, but it turns a single meeting into a relationship. Platforms such as LinkedIn make contact easier, yet they do not replace the attention and sincerity that relationships require."
+          "Networking is often understood as collecting contacts at events. A more useful view is to treat it as building trust over time, by giving before asking and following up after each meeting. Research also shows the value of a broad network: acquaintances and former colleagues often bring the new information that close contacts cannot.[[Granovetter, M. (1973). The Strength of Weak Ties. Rajkumar, K. et al. (2022). A causal test of the strength of weak ties. Science. Levin, D., Walter, J. and Murnighan, J.K. (2011). Dormant ties: The value of reconnecting. Organization Science.]]",
+          { figure: "matrix", caption: "Four kinds of professional ties, by how often you are in touch and how much trust exists. Click a quadrant." }
+        ]},
+        { h: "Standing out", blocks: [
+          "The advice to stop trying to win crowded races applies directly to careers. Instead of competing on the same generic profile as everyone else, it is more effective to find a specific need that few people address, and to become credible on it.[[The idea echoes Blue Ocean Strategy, which contrasts crowded markets with uncontested ones. Kim, W.C. and Mauborgne, R. (2005). Harvard Business School Press.]]",
+          "One caution: a pocket may be quiet simply because there is little demand. This is why proving value with real results matters as much as finding the niche."
         ]},
         { h: "What I will do with it", blocks: [
-          "As a future marketer, I will look at marketing technology platforms with one question in mind: which tasks they automate, and which decisions they leave, or should leave, to people.",
-          "Fashion and beauty marketing is a crowded race. Rather than competing on the same profile as everyone else, I want to identify a specific pocket where I can bring proven value, such as the Asian markets or the operational side of digital campaigns, and build relationships over time with the people who work there."
+          "Fashion and beauty marketing is a crowded race. As a future marketer, I want to find a specific angle where I can bring proven value, such as Asian markets or digital campaign operations, and build relationships with the people working in it over time, starting from Singapore."
         ]}
       ]
     },
 
-    chain: [
-      { role: "Plan", does: "Creative and media teams build the campaign and media plan together, in one shared framework.", note: "Fewer handoffs between teams that usually work in silos." },
-      { role: "Create", does: "Produce the master assets, with optional AI tools for images, video and translation.", note: "The creative idea remains a human decision." },
-      { role: "Adapt", does: "Adapt and localise one creative into the formats, lengths and languages each channel and market needs.", note: "Repetitive work where automation clearly helps." },
-      { role: "Validate", does: "Preflight checks on specifications and an AI screening against advertising rules in each market.", note: "A first filter, not a legal guarantee." },
-      { role: "Approve", does: "Brand, media and legal stakeholders approve, with an audit trail of who validated what.", note: "The human checkpoint before anything goes live.", human: true },
-      { role: "Activate and report", does: "Deliver to TV, connected TV, social, display and digital out-of-home, then feed performance back into planning.", note: "More than 18,000 destinations, according to Cape.io." }
-    ],
     matrix: {
       y: "Trust",
       x: "How often you are in touch",
       cells: [
-        { name: "Dormant ties", tag: "High trust, rare contact", d: "Former colleagues, classmates or managers you have lost touch with. Trust remains, and their experience has moved on.", ex: "Research suggests reconnecting with them brings fresh and useful advice." },
+        { name: "Dormant ties", tag: "High trust, rare contact", d: "Former colleagues, classmates or managers you have lost touch with. Trust remains, and their experience has moved on.", ex: "Reconnecting with them often brings fresh and useful advice." },
         { name: "Close ties", tag: "High trust, frequent contact", d: "Close colleagues, mentors and friends: strong support and honest feedback.", ex: "But they often share your information and circles." },
         { name: "Weak ties", tag: "Low trust, rare contact", d: "Acquaintances met at events, guest speakers, people you follow on LinkedIn.", ex: "Often the source of new information and opportunities.", best: true },
         { name: "Familiar faces", tag: "Frequent contact, little depth", d: "People you see often but do not really know, such as classmates in other groups or colleagues in other teams.", ex: "Easy relationships to deepen with a coffee or a follow-up." }
