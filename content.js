@@ -166,24 +166,24 @@ window.SESSIONS = [
 
   /* ---------- Session 4 ---------- */
   {
-    speaker: "Vitaly Che",
-    role: "Business Development Director",
+    speaker: "Vitaliy Nechaev",
+    role: "Head of ASEAN",
     company: "Cape.io",
     date: "",
     title: "Cape.io",
     definition: "Cape.io is an advertising technology platform for what it calls Intelligent Campaign Automation. It brings creative production, compliance checks and media delivery into a single workflow, so that brands and agencies can adapt one campaign into the many formats each channel requires, check it, and deliver it to TV, connected TV, social and digital platforms across markets.",
     learnings: [
       { t: "One workflow from creative to delivery",
-        d: "Behind every campaign sits heavy operational work: dozens of versions, formats and specifications, legal checks and deliveries to each channel, usually handled by separate teams and tools. Cape.io (formerly Peach) connects production, validation and activation in one platform, with more than 18,000 destinations across social, display, connected TV and linear TV, and brands using it in over 110 countries." },
-      { t: "Automate the repetitive, keep the judgement",
-        d: "The demo showed where automation adds value: adapting and localising one creative into many formats, checking technical specifications before delivery, and screening content against advertising rules in more than 20 markets. Approval workflows keep an audit trail of who validated what. The creative idea, the brand decision and the final approval remain with people." },
+        d: "Behind every campaign sits heavy operational work: dozens of versions, formats and specifications, legal checks and deliveries to each channel, usually handled by separate teams and tools. Cape.io (formerly Peach) connects production, validation and activation in one platform, with more than 18,000 destinations and brands in over 110 countries. Automation handles the repetitive tasks (adapting formats, checking specifications, a first compliance screening), while the creative idea and the final approval stay with people." },
+      { t: "Stop trying to win crowded races",
+        d: "The core advice of the session: most expensive mistakes come from competing where everyone already is, and the wins come from \u201cquiet pockets\u201d where few people are looking. The same logic applies to a business as to a career: focus on one specific need, prove it with real results, and work with a strong team to deliver them. The speaker's own path illustrates it: a VR agency founded in Singapore in 2015, later sold to Entropia (now part of Accenture Song), before leading Cape.io's expansion in ASEAN." },
       { t: "Networking is a long-term investment, not a transaction",
         d: "A strong network is built before it is needed. General advice: give before you ask (share an article, make an introduction), follow up after every meeting, stay in touch every month or two, and ask for advice rather than favours. Diversity matters: a large LinkedIn experiment with 20 million users found that moderately weak ties, people you know but not closely, were the most useful for finding new jobs." }
     ],
 
     essay: {
       title: "REFLECTION",
-      standfirst: "Consumers see a single advert; behind it lies a chain of versions, checks and deliveries that rarely gets discussed. This reflection looks at that operational side of marketing, at what should and should not be automated, and at the relationships that, in the end, make a career in this industry.",
+      standfirst: "Consumers see a single advert; behind it lies a chain of versions, checks and deliveries that rarely gets discussed. This reflection looks at that operational side of marketing, at what should and should not be automated, and at two pieces of career advice: avoiding crowded races, and building relationships over time.",
       chapters: [
         { h: "The hidden work behind every campaign", blocks: [
           "Marketing courses usually focus on strategy and creativity. The demo made visible a less glamorous reality: a single campaign may need to exist in dozens of formats, lengths and languages, each checked against the specifications of a platform and the rules of a market, then delivered to broadcasters, social networks and digital publishers. As channels multiply, from connected TV to digital out-of-home, this work grows faster than teams do.",
@@ -196,15 +196,20 @@ window.SESSIONS = [
           "Compliance sits between the two. An AI check against advertising rules can be a valuable first filter, especially across many markets, but responsibility for what is published remains with the advertiser, and local regulations and sensitivities often require human and sometimes legal review.[[Cape.io describes its AI compliance check as covering more than 20 global markets. A first automated screening does not replace the advertiser's own responsibility under each market's rules.]] Similarly, testing ideas on AI personas may help explore options, but it cannot replace feedback from real consumers.",
           "For fashion and beauty, where a launch can run in many countries and on many platforms at once, I see real value in tools that protect consistency of brand assets across formats. The risk is the opposite one: that automated adaptation produces uniform content and erases the local nuances that make a campaign resonate. Deciding where to standardise and where to adapt is a strategic choice that should stay human."
         ]},
+        { h: "Quiet pockets rather than crowded races", blocks: [
+          "The central message of the session was simple: stop trying to win crowded races. Competing where everyone already is means competing on price, visibility or effort against many equally capable players. Finding a specific need that few others address allows a person or a company to build a position more quickly and more durably.",
+          "This idea echoes a well-known strategy framework, which contrasts saturated \u201cred oceans\u201d with uncontested \u201cblue oceans\u201d of demand.[[Kim, W.C. and Mauborgne, R. (2005). Blue Ocean Strategy. Harvard Business School Press.]] Cape.io itself follows this logic: rather than competing with creative agencies or media platforms, it focuses on one operational problem that most actors in the industry share but few solve.",
+          "I would add one caution. A pocket can be quiet because nobody has seen it, but also because there is no real demand. This is why the second part of the advice matters as much as the first: proving the idea with real results. In marketing terms, a niche must still be validated by customers before it is worth investing in."
+        ]},
         { h: "Networking as relationship building", blocks: [
-          "The second part of the session was about networking, and it changed how I see the word. Networking is often understood as collecting contacts at events. A more useful view is to treat it as building relationships of trust over time, in which both sides bring something.",
+          "The session also covered networking, and it changed how I see the word. Networking is often understood as collecting contacts at events. A more useful view is to treat it as building relationships of trust over time, in which both sides bring something.",
           "Research supports a broad rather than a narrow network. Close contacts offer support, but often know the same things we do; acquaintances bring new information and opportunities.[[Granovetter, M. (1973). The Strength of Weak Ties. American Journal of Sociology. Rajkumar, K. et al. (2022). A causal test of the strength of weak ties. Science.]] Former colleagues we have lost touch with can also be a valuable source of fresh advice, because trust remains while their experience has moved on.[[Levin, D., Walter, J. and Murnighan, J.K. (2011). Dormant ties: The value of reconnecting. Organization Science.]]",
           { figure: "matrix", caption: "Four kinds of professional ties, by how often you are in touch and how much trust exists. Click a quadrant." },
           "What I find most convincing is the idea of giving before asking. Sharing a relevant article, making an introduction or simply following up with thanks costs little, but it turns a single meeting into a relationship. Platforms such as LinkedIn make contact easier, yet they do not replace the attention and sincerity that relationships require."
         ]},
         { h: "What I will do with it", blocks: [
-          "As a future marketer, I will look at marketing technology platforms with one question in mind: which tasks they automate, and which decisions they leave, or should leave, to people. Efficiency gains are welcome, but brand consistency, local relevance and compliance remain human responsibilities.",
-          "I will also approach networking as a long-term habit: following up after meetings, reconnecting with former colleagues, and offering help before asking for it, especially in fashion and beauty, where careers often depend on relationships built over years."
+          "As a future marketer, I will look at marketing technology platforms with one question in mind: which tasks they automate, and which decisions they leave, or should leave, to people.",
+          "Fashion and beauty marketing is a crowded race. Rather than competing on the same profile as everyone else, I want to identify a specific pocket where I can bring proven value, such as the Asian markets or the operational side of digital campaigns, and build relationships over time with the people who work there."
         ]}
       ]
     },
