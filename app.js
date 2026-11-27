@@ -143,7 +143,7 @@ function roomHTML(i) {
   <section class="r-hero">
     <div>
       <div class="r-num">${pad(i + 1)}</div>
-      <h2>${s.title}</h2>
+      <h2>${s.title}</h2>${s.subtitle ? `<p class="r-sub">${s.subtitle}</p>` : ""}
       ${s.definition ? `<p class="def">${s.definition}</p>` : ""}
       <dl class="who">
         <div><dt>${/,| and /.test(s.speaker) ? "Speakers" : "Speaker"}</dt><dd>${s.speaker}</dd></div>

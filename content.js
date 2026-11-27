@@ -170,7 +170,8 @@ window.SESSIONS = [
     role: "Head of ASEAN",
     company: "Cape.io",
     date: "",
-    title: "Career & networking",
+    title: "Cape.io",
+    subtitle: "Career and networking",
     definition: "Professional networking means building and maintaining relationships with people in one's field, based on mutual help and trust. Together with where a career starts and how a person stands out, it shapes how opportunities arrive, often before they are ever advertised.",
     learnings: [
       { t: "Start where opportunities concentrate",
