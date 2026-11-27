@@ -176,8 +176,10 @@ window.SESSIONS = [
     learnings: [
       { t: "Networking: give first, follow up, stay in touch",
         d: "A network is built before it is needed. Give before you ask (share an article, make an introduction), follow up after every meeting, stay in touch regularly, and ask for advice rather than favours. Acquaintances matter as much as close contacts: a LinkedIn experiment with 20 million users found that moderately weak ties were the most useful for finding new jobs." },
-      { t: "Stand out: stop trying to win crowded races",
-        d: "Most expensive mistakes come from competing where everyone already is; the wins come from \u201cquiet pockets\u201d where few people are looking. For a career as for a business: focus on one specific need, prove your value with real results, and surround yourself with a strong team." }
+      { t: "Be remembered: a clear story backed by proof",
+        d: "People remember a specific story, not a list of skills. A short, clear introduction (who you are, what you focus on, what you have achieved) makes it easy for others to recommend you. Visible proof reinforces it: awards, press coverage, public speaking. The speaker cites 5 creative and business awards, features in outlets such as Channel News Asia and The Straits Times, and around 50 talks across Southeast Asia and the Middle East." },
+      { t: "Build a track record step by step",
+        d: "His career shows how credibility accumulates: moving to Singapore in 2012, founding a VR agency in 2015, winning more than 100 pitches with major brands and agencies in ASEAN and the Middle East, selling the company to Entropia (now part of Accenture Song), then leading Cape.io's expansion in ASEAN. Each step builds on proof from the previous one." }
     ],
 
     essay: {
