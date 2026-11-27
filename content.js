@@ -172,7 +172,7 @@ window.SESSIONS = [
     date: "",
     title: "Cape.io",
     subtitle: "Career and networking",
-    definition: "Professional networking means building and maintaining relationships with people in one's field, based on mutual help and trust. Together with where a career starts and how a person stands out, it shapes how opportunities arrive, often before they are ever advertised.",
+    definition: "Vitaliy Nechaev leads the ASEAN expansion of Cape.io, a platform that automates the production, checking and delivery of advertising campaigns across channels. Before that, he founded his own VR agency in Singapore, which he later sold to Entropia (now part of Accenture Song). After a short demo of Cape.io, the session focused mainly on his career path and achievements, and on practical advice: how to network, how to be remembered and where to start a career.",
     learnings: [
       { t: "Start where opportunities concentrate",
         d: "Singapore hosts the regional headquarters of many brands, agencies and technology companies, works in English and serves as a gateway to Southeast Asia. Starting a career here gives early exposure to several markets at once. The speaker's own path shows it: he moved to Singapore in 2012, founded a VR agency in 2015, later sold it to Entropia (now part of Accenture Song), and now leads the ASEAN expansion of Cape.io, a campaign automation platform he briefly demoed." },
